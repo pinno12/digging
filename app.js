@@ -13,7 +13,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const {getHomePage} = require('./routes/index');
 var subtract = require('./routes/subtract');
-
+var digging = require('./routes/digging');
 
 const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage} = require('./routes/player');
 // const port = 5000;
@@ -45,6 +45,7 @@ app.use(bodyParser.json()); // parse form data client
 app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
 app.use(fileUpload()); // configure fileupload
 app.use('/subtract', subtract);
+app.use('/digging', digging);
 // routes for the app
 
 app.get('/', getHomePage);
