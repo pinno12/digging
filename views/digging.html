@@ -1,0 +1,237 @@
+<!doctype html>
+<html class="h-100" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="디깅, 홍대, 전시, 졸업, digging, art, show, rose">
+    <meta name="author" content="김세현, 낭은영, 설경민, 정승원, 디깅">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>디깅</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,700;0,800;0,900;1,200&family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        body {
+            font-family: 'Montserrat', 'Noto Sans KR';
+        }
+
+        .kr-font {
+            font-family: 'Noto Sans KR';
+        }
+
+        .en-font {
+            font-family: 'Montserrat';
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+
+        .box_holder {
+  position: relative;
+  width: 240px;
+  height: 335px;
+}
+.box_holder .front, .box_holder .back {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: #C3C3C3;
+  color: #3b3b3b;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+.box_holder .back {
+  transform: rotateY(180deg);
+}
+.box_holder.show_info .back {
+  transform: rotateY(0deg);
+}
+.box_holder.show_info .front {
+  transform: rotateY(-180deg);
+}
+
+    </style>
+    <!-- Custom styles for this template -->
+</head>
+
+<body class="d-flex flex-column h-100">
+    <div class="container-fluid">
+        <div class="row" id = "s1" style= "background-color: firebrick;">
+            <div class="col-4" style = " margin-left: 7%;  margin-top: 8%;">
+                <h1 style = 'font-size: 6rem;line-height:1.0rem;'>LET’S START DIGGING‍ <span><img src = "images/개발자님(씬4까지)/씬1/씬1 - 이모티콘.png"></span> </h1>
+                <div style = "margin-top:81%">
+                  <button class="ui circular icon button btn-red" onclick="bg-red()">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui yellow circular icon button btn-orange" onclick="bg_orange()">
+                    <img  src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-yellow">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-mint">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-green">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-skyblue">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-blue">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-purple">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                  <button class="ui circular icon button btn-pink">
+                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
+                  </button>
+                </div> 
+            </div>
+            <div class="col-7" style = "right:25%">
+                <img class = "d-card" id = "s1_card" src = "images/개발자님(씬4까지)/씬1/씬1-카드-레드(뒷면)@2x.png" style = "width:155%" >
+                <p id = "s1_text" class = "text-white" style = "font-size: 2rem;width: 130%;position: unset;transform: rotate(-60deg);padding-top: 0%;margin-left: 4%;padding-left: 101%;">안녕Knowledge</p>
+            </div>
+            <div class="col" >
+                <img class = "float-right mr-5 mb-5" src = "images/개발자님(씬4까지)/씬1/씬1 - 스크롤 아이콘@2x.png">              
+            </div>
+                        
+        </div>
+    </div>
+    <!-- <div class="box_holder">
+        <div class="front">Some content here</div>
+        <div class="back">Behind</div>
+      </div> -->
+
+      <canvas id="background" width="1000" height="1000"></canvas>
+<script>
+function bg_orange() {
+  document.getElementById("s1").style.backgroundColor = "orange";
+  document.getElementById("s1_card").src = "images/개발자님(씬4까지)/씬1/씬1-카드-오렌지(뒷면)@2x.png"; 
+}
+
+// $(function() {
+//     var rotation = 0, 
+//         scrollLoc = $(document).scrollTop();
+//     $(window).scroll(function() {
+//         var newLoc = $(document).scrollTop();
+//         var diff = scrollLoc - newLoc;
+//         rotation += diff, scrollLoc = newLoc;
+//         // var rotationStr = "rotate(" + rotation + "deg)";
+//         var rotationStr = "skewY(" + rotation + "deg)";
+//         // var y_rotation = "skewY(" + rotation + "deg)";
+//         $(".d-card").css({
+//             "-webkit-transform": rotationStr,
+//             "-moz-transform": rotationStr,
+//             "transform": rotationStr
+//         });
+//     });
+// })
+
+
+$(document).ready(function() {
+  $('.box_holder').click(function() {
+    $(this).toggleClass('show_info')
+  });
+});
+
+var images = new Array();
+var currentLocation = 0;
+var totalImages = 200;
+
+for (var i = 1; i < totalImages; i++) {
+  var img = new Image;
+  var slug = '000' + i;
+  img.src = 'https://s3.amazonaws.com/clearmotion/hero/high-min/frame' + slug.slice(-3) + '-low.jpg'
+  images.push(img);
+}
+
+var c = document.getElementById("background");
+var ctx = c.getContext("2d");
+
+var mouseWheel = function() {
+  var newLocation = null;
+  window.addEventListener('wheel', function(e) {
+    e.preventDefault(); // No scroll
+
+    // update our variable at high frequency
+    var delta = Math.max(-1, Math.min(1, e.deltaY));
+    if (delta == -1) currentLocation += 1;
+    if (delta == 1) currentLocation -= 1;
+    if (currentLocation < 0) currentLocation = 0;
+    if (currentLocation >= (totalImages - 1)) currentLocation = (totalImages - 1);
+
+    if (newLocation === null) { // if set, we already are waiting to draw
+      requestAnimationFrame(setImage);
+    }
+    newLocation = currentLocation;
+  });
+
+  function setImage() {
+    if (images[newLocation]) {
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.drawImage(images[newLocation], 0, 0, 1000, 1000);
+    }
+    newLocation = null; // so the throttler knows we can draw again
+  }
+
+}
+
+
+images[0].onload = function() {
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.drawImage(images[currentLocation], 0, 0, 1000, 1000);
+  mouseWheel();
+};
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    </script>
+</body>
+</html>
