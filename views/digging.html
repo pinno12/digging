@@ -19,7 +19,7 @@
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
         
-        <link rel="icon" type="image/png" href="images/webclip.png" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <style>
         h1,
@@ -90,35 +90,18 @@
     <div class="container-fluid">
         <div class="row" id = "s1" style= "background-color: firebrick;">
             <div class="col-4" style = " margin-left: 7%;  margin-top: 8%;">
-                <h1 style = 'font-size: 6rem;line-height:1.0rem;'>LET’S START DIGGING‍ <span><img src = "images/개발자님(씬4까지)/씬1/씬1 - 이모티콘.png"></span> </h1>
+                <h1 style = 'font-size: 6rem;'>LET’S START DIGGING‍ <span><img src = "images/개발자님(씬4까지)/씬1/씬1 - 이모티콘.png"></span> </h1>
                 <div style = "margin-top:81%">
-                  <button class="ui circular icon button btn-red" onclick="bg-red()">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui yellow circular icon button btn-orange" onclick="bg_orange()">
-                    <img  src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-yellow">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-mint">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-green">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-skyblue">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-blue">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-purple">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
-                  <button class="ui circular icon button btn-pink">
-                    <img src = "images/개발자님(씬4까지)/씬1/씬1-색깔-레드.png">
-                  </button>
+                  <a class="ui red circular label" onclick = "bg_change('red')"></a>
+                  <a class="ui orange circular label" onclick="bg_change('orange')"></a>
+                  <a class="ui yellow circular label" onclick="bg_change('yellow')"></a>
+                  <a class="ui olive circular label"></a>
+                  <a class="ui green circular label"></a>
+                  <a class="ui teal circular label"></a>
+                  <a class="ui blue circular label"></a>
+                  <a class="ui violet circular label"></a>
+                  <a class="ui purple circular label"></a>
+                   
                 </div> 
             </div>
             <div class="col-7" style = "right:25%">
@@ -142,24 +125,30 @@ function bg_orange() {
   document.getElementById("s1").style.backgroundColor = "orange";
   document.getElementById("s1_card").src = "images/개발자님(씬4까지)/씬1/씬1-카드-오렌지(뒷면)@2x.png"; 
 }
+function bg_change(color) {
 
-// $(function() {
-//     var rotation = 0, 
-//         scrollLoc = $(document).scrollTop();
-//     $(window).scroll(function() {
-//         var newLoc = $(document).scrollTop();
-//         var diff = scrollLoc - newLoc;
-//         rotation += diff, scrollLoc = newLoc;
-//         // var rotationStr = "rotate(" + rotation + "deg)";
-//         var rotationStr = "skewY(" + rotation + "deg)";
-//         // var y_rotation = "skewY(" + rotation + "deg)";
-//         $(".d-card").css({
-//             "-webkit-transform": rotationStr,
-//             "-moz-transform": rotationStr,
-//             "transform": rotationStr
-//         });
-//     });
-// })
+  document.getElementById("s1").style.backgroundColor = color;
+  document.getElementById("s1_card").src = "images/s1/" + color + "/" + color + "_card_back.png";  
+}
+
+
+$(function() {
+    var rotation = 0, 
+        scrollLoc = $(document).scrollTop();
+    $(window).scroll(function() {
+        var newLoc = $(document).scrollTop();
+        var diff = scrollLoc - newLoc;
+        rotation += diff, scrollLoc = newLoc;
+        // var rotationStr = "rotate(" + rotation + "deg)";
+        var rotationStr = "skewY(" + rotation + "deg)";
+        // var y_rotation = "skewY(" + rotation + "deg)";
+        $(".d-card").css({
+            "-webkit-transform": rotationStr,
+            "-moz-transform": rotationStr,
+            "transform": rotationStr
+        });
+    });
+})
 
 
 $(document).ready(function() {
