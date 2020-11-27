@@ -1,41 +1,402 @@
-<% include partials/header.ejs %>
-    <div class="table-wrapper">
-        <% if (players.length > 0) {%>
-            <table class="table table-hovered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">IfffD</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Position</th>
-                        <th scope="col">Number</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% players.forEach((player, index) => { %>
-                        <tr>
-                            <th scope="row"><%= player.id %></th>
-                            <td><img src="/assets/img/<%= player.image %>" class="rounded-circle player-img" alt=""></td>
-                            <td><%= player.first_name %></td>
-                            <td><%= player.last_name %></td>
-                            <td><%= player.position %></td>
-                            <td><%= player.number %></td>
-                            <td>@<%= player.user_name %></td>
-                            <td>
-                                <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
-                                <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
-        <% } else { %>
-            <p class="text-center">Nofffff players found. Go <a href="/add" >here</a> to add players.</p>
-        <% } %>
+<!doctype html>
+<html class="h-100" lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="디깅, 홍대, 전시, 졸업, digging, art, show, rose">
+    <meta name="author" content="김세현, 낭은영, 설경민, 정승원, 디깅">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>디깅</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,700;0,800;0,900;1,200&family=Noto+Sans+KR:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+
+        <!-- <link rel="shortcut icon" type="image/x-icon" href="images/favicon-32x32.png"> -->
+        <link rel="shortcut icon" href="images/favicon2.png">
+        <link rel="apple-touch-icon-precomposed" href="images/favicon2.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon2.png">
+        <link rel="image_src" href="images/favicon2.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8L0YF3JNQ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8L0YF3JNQ2');
+</script>
+
+
+    <style>
+
+
+.flip-card {
+  background-color: transparent;
+  /* width: 300px; */
+  /* height: 300px; */
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  /* width: 100%; */
+  /* height: 100%; */
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: black;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-container{
+/*perspective*/
+-webkit-perspective:1000;
+   -moz-perspective:1000;
+    -ms-perspective:1000;
+     -o-perspective:1000;
+        perspective:1000;
+}
+/* flip the pane when hovered */
+	.flipped {
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+.flip-container, .front, .back{
+width:50px;
+height:50px;
+}
+/* flip speed goes here */
+.flipper {
+/*transition*/
+-webkit-transition:0.6s;
+   -moz-transition:0.6s;
+     -o-transition:0.6s;
+        transition:0.6s;
+/*transform-style*/
+-webkit-transform-style:preserve-3d;
+   -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;
+     -o-transform-style:preserve-3d;
+        transform-style:preserve-3d;
+position:relative;
+}
+/* hide back of pane during swap */
+.front, .back{
+/*backface-visibility*/
+-webkit-backface-visibility:hidden;
+   -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+     -o-backface-visibility:hidden;
+        backface-visibility:hidden;
+position:absolute;
+top:0;
+left:0;
+}
+/* front pane, placed above back */
+.front{
+z-index:2;
+}
+/* back, initially hidden pane */
+.back{
+/*transform*/
+-webkit-transform:rotateY(180deg);
+   -moz-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+     -o-transform:rotateY(180deg);
+        transform:rotateY(180deg);
+}
+
+      
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        body {
+            font-family: 'Montserrat', 'Noto Sans KR';
+        }
+
+        .kr-font {
+            font-family: 'Noto Sans KR';
+        }
+
+        .en-font {
+            font-family: 'Montserrat';
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+
+        .box_holder {
+  position: relative;
+  width: 240px;
+  height: 335px;
+}
+.box_holder .front, .box_holder .back {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: #C3C3C3;
+  color: #3b3b3b;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+.box_holder .back {
+  transform: rotateY(180deg);
+}
+.box_holder.show_info .back {
+  transform: rotateY(0deg);
+}
+.box_holder.show_info .front {
+  transform: rotateY(-180deg);
+}
+
+    </style>
+    <!-- Custom styles for this template -->
+</head>
+
+<body class="d-flex flex-column h-100">
+    <div class="container-fluid">
+        <div class="row" id = "s1" style= "background-color: firebrick;">
+            <div class="col-4" style = " margin-left: 7%;  margin-top: 8%;">
+                <h1 class= "text-white" style = 'font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍ <span><img src = "images/s1/emoji.png"></span> </h1>
+                <div style = "margin-top:40%">
+                  <a onclick="bg_change('red')" href = "#"><img id = "r_btn" src ="images/s1/red/red_button_notpress.png"></a>
+
+                  <a onclick="bg_change('orange')" href = "#"><img id = "o_btn" src ="images/s1/orange/orange_button_notpress.png"></a>
+                  <a onclick="bg_change('yellow')" href = "#"><img id = "y_btn" src ="images/s1/yellow/yellow_button_notpress.png"></a>
+                  <a onclick="bg_change('green')" href = "#"><img id = "g_btn" src ="images/s1/green/green_button_notpress.png"></a>
+                  <a onclick="bg_change('mint')" href = "#"><img id = "m_btn" src ="images/s1/mint/mint_button_notpress.png"></a>
+                  <a onclick="bg_change('sky')" href = "#"><img  id = "s_btn"  src ="images/s1/sky/sky_button_notpress.png"></a>
+                  <a onclick="bg_change('blue')" href = "#"><img id = "b_btn"  src ="images/s1/blue/blue_button_notpress.png"></a>
+                  <a onclick="bg_change('purple')" href = "#"><img id = "p_btn" src ="images/s1/purple/purple_button_notpress.png"></a>
+                  <a onclick="bg_change('pink')" href = "#"><img id = "pink_btn"  src ="images/s1/pink/pink_button_notpress.png"></a>
+                </div> 
+            </div>
+            <div class="col-7" style = "right:0">
+
+              <div class="flip-card">
+                <div class="flip-card-inner d-card" onclick="this.classList.toggle('flipped')">
+                  <div class="flip-card-front">
+                    <img class = "d-card" id = "s1_card" src="images/s1/red/red_card_back.png" alt="Avatar" style="width:155%">
+                  </div>
+                  <div class="flip-card-back">
+                    <img src="images/s1/red/red_card_front.png" alt="Avatar" style="width:155%">
+                  </div>
+                </div>
+              </div>
+
+                <!-- <img class = "d-card" id = "s1_card" src = "images/s1/red/red_card_back.png" style = "width:155%" > -->
+
+                <p id = "s1_text" class = "text-white" style = "font-size: 2rem;width: 130%;position: unset;transform: rotate(-60deg);padding-top: 0%;margin-left: 4%;padding-left: 101%;">STYLE/BEAUTY</p>
+            </div>
+            <div class="col" >
+                <img class = "float-right mr-5 mb-5" src = "images/s1/mouse.png">              
+            </div>
+                        
+        </div>
     </div>
-</div>
+    <!-- <div class="box_holder">
+        <div class="front">Some content here</div>
+        <div class="back">Behind</div>
+      </div> -->
+
+      <canvas id="background" width="1000" height="1000"></canvas>
+<script>
+
+function bg_change(color) {
+  document.getElementById("s1_card").src = "images/s1/" + color + "/" + color + "_card_back.png";  
+  switch(color) {
+  case 'red':
+    document.getElementById("s1").style.backgroundColor = "#E80000";
+    document.getElementById("r_btn").src = "images/s1/red/red_button_press.png";
+    document.getElementById("s1_text").textContent = "STYLE/BEAUTY";
+    break;
+  case 'orange':
+    document.getElementById("s1").style.backgroundColor = "#F27809";
+    document.getElementById("o_btn").src = "images/s1/orange/orange_button_press.png";
+    document.getElementById("s1_text").textContent = "PLACE";
+    break;
+  case 'yellow':
+   document.getElementById("s1").style.backgroundColor = "#FFBA22";
+   document.getElementById("y_btn").src = "images/s1/yellow/yellow_button_press.png";
+   document.getElementById("s1_text").textContent = "LIVING";
+    break;
+  case 'green':
+    document.getElementById("s1").style.backgroundColor = "#009845";
+   document.getElementById("g_btn").src = "images/s1/green/green_button_press.png";
+   document.getElementById("s1_text").textContent = "PET";
+   break;
+  case 'mint':
+   document.getElementById("s1").style.backgroundColor = "#00BFA8";
+   document.getElementById("m_btn").src = "images/s1/mint/mint_button_press.png";
+   document.getElementById("s1_text").textContent = "SCUBA DIVING";
+  break;
+  case 'sky':
+   document.getElementById("s1").style.backgroundColor = "#009DFF";
+   document.getElementById("s_btn").src = "images/s1/sky/sky_button_press.png";
+   document.getElementById("s1_text").textContent = "HOBBY";
+  break;
+  case 'blue':
+    document.getElementById("s1").style.backgroundColor = "#364DEB";
+    document.getElementById("b_btn").src = "images/s1/blue/blue_button_press.png";
+    document.getElementById("s1_text").textContent = "KNOWLEDGE/IT";
+    break;
+  case 'purple':
+    document.getElementById("s1").style.backgroundColor = "#7119F2";
+    document.getElementById("p_btn").src = "images/s1/purple/purple_button_press.png";
+    document.getElementById("s1_text").textContent = "ENTERTAINMENT";
+    break;
+  case 'pink':
+    document.getElementById("s1").style.backgroundColor = "#FF0080";
+    document.getElementById("pink_btn").src = "images/s1/pink/pink_button_press.png";
+    document.getElementById("s1_text").textContent = "PEOPLE";
+    break;
+
+  default:
+  document.getElementById("s1").style.backgroundColor = "#E80000";
+  break;
+}
+
+  
+}
+
+
+$(function() {
+    var rotation = 0, 
+        scrollLoc = $(document).scrollTop();
+    $(window).scroll(function() {
+        var newLoc = $(document).scrollTop();
+        var diff = scrollLoc - newLoc;
+        rotation += diff, scrollLoc = newLoc;
+        // var rotationStr = "rotate(" + rotation + "deg)";
+        var rotationStr = "rotate(" + rotation + "deg)";
+        // var y_rotation = "skewY(" + rotation + "deg)";
+        $(".d-card").css({
+            "-webkit-transform": rotationStr,
+            "-moz-transform": rotationStr,
+            "transform": rotationStr
+        });
+    });
+})
+
+
+$(document).ready(function() {
+  $('.box_holder').click(function() {
+    $(this).toggleClass('show_info')
+  });
+});
+
+var images = new Array();
+var currentLocation = 0;
+var totalImages = 200;
+
+for (var i = 1; i < totalImages; i++) {
+  var img = new Image;
+  var slug = '000' + i;
+  img.src = 'https://s3.amazonaws.com/clearmotion/hero/high-min/frame' + slug.slice(-3) + '-low.jpg'
+  images.push(img);
+}
+
+var c = document.getElementById("background");
+var ctx = c.getContext("2d");
+
+var mouseWheel = function() {
+  var newLocation = null;
+  window.addEventListener('wheel', function(e) {
+    e.preventDefault(); // No scroll
+
+    // update our variable at high frequency
+    var delta = Math.max(-1, Math.min(1, e.deltaY));
+    if (delta == -1) currentLocation += 1;
+    if (delta == 1) currentLocation -= 1;
+    if (currentLocation < 0) currentLocation = 0;
+    if (currentLocation >= (totalImages - 1)) currentLocation = (totalImages - 1);
+
+    if (newLocation === null) { // if set, we already are waiting to draw
+      requestAnimationFrame(setImage);
+    }
+    newLocation = currentLocation;
+  });
+
+  function setImage() {
+    if (images[newLocation]) {
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.drawImage(images[newLocation], 0, 0, 1000, 1000);
+    }
+    newLocation = null; // so the throttler knows we can draw again
+  }
+
+}
+
+
+images[0].onload = function() {
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.drawImage(images[currentLocation], 0, 0, 1000, 1000);
+  mouseWheel();
+};
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    </script>
 </body>
 </html>
