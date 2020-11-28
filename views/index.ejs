@@ -27,6 +27,8 @@
   <link rel="apple-touch-icon-precomposed" href="images/favicon2.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon2.png">
   <link rel="image_src" href="images/favicon2.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8L0YF3JNQ2"></script>
   <script>
@@ -36,32 +38,39 @@
 
     gtag('config', 'G-8L0YF3JNQ2');
   </script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <style>
+    .fade {
+      opacity: 1;
+    }
 
-.container-img {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-}
+    .s1_clicked {
+      border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    }
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+    .container-img {
+      position: relative;
+      width: 100%;
+      /* max-width: 400px; */
+    }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 80%;
-  /* opacity: 0; */
-}
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      /* opacity: 0; */
+    }
 
 
 
@@ -101,7 +110,7 @@
 
     .flip-card-back {
       transform: rotateY(180deg) rotate(30deg);
-      
+
     }
 
     .flip-container {
@@ -194,61 +203,41 @@
       }
     }
 
-
-    .box_holder {
-      position: relative;
-      width: 240px;
-      height: 335px;
-    }
-
-    .box_holder .front,
-    .box_holder .back {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      height: 100%;
-      width: 100%;
-      text-align: center;
-      background: #C3C3C3;
-      color: #3b3b3b;
-      transition: 1s;
-      backface-visibility: hidden;
-    }
-
-    .box_holder .back {
-      transform: rotateY(180deg);
-    }
-
-    .box_holder.show_info .back {
-      transform: rotateY(0deg);
-    }
-
-    .box_holder.show_info .front {
-      transform: rotateY(-180deg);
-    }
+    canvas { 
+  height: 100vh; 
+  width: 100vw; 
+  display: block;
+}
   </style>
   <!-- Custom styles for this template -->
 </head>
 
 <body class="d-flex flex-column h-100">
   <div class="container-fluid">
-    <div class="row" id="s1" style="background-color:#E80000; height:110vh">
+    <div class="row" data-aos="zoom-out" id="s1" style="background-color:#E80000; height:110vh">
       <div class="col-4" style=" margin-left: 2%;  margin-top: 4%;">
-        <h1 class="text-white" id = "s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img
+        <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img
               src="images/s1/emoji.png"></span> </h1>
         <div style="margin-top:40%">
-          <a onclick="bg_change('red')" href="#"><img id="r_btn" src="images/s1/red/red_button_notpress.png"></a>
-          <a onclick="bg_change('orange')" href="#"><img id="o_btn"
-              src="images/s1/orange/orange_button_notpress.png"></a>
-          <a onclick="bg_change('yellow')" href="#"><img id="y_btn"
-              src="images/s1/yellow/yellow_button_notpress.png"></a>
-          <a onclick="bg_change('green')" href="#"><img id="g_btn" src="images/s1/green/green_button_notpress.png"></a>
-          <a onclick="bg_change('mint')" href="#"><img id="m_btn" src="images/s1/mint/mint_button_notpress.png"></a>
-          <a onclick="bg_change('sky')" href="#"><img id="s_btn" src="images/s1/sky/sky_button_notpress.png"></a>
-          <a onclick="bg_change('blue')" href="#"><img id="b_btn" src="images/s1/blue/blue_button_notpress.png"></a>
-          <a onclick="bg_change('purple')" href="#"><img id="p_btn"
-              src="images/s1/purple/purple_button_notpress.png"></a>
-          <a onclick="bg_change('pink')" href="#"><img id="pink_btn" src="images/s1/pink/pink_button_notpress.png"></a>
+
+          <a onclick="bg_change($(this).attr('id'))" class="ui circular label s1_clicked" id="red"
+            style="background-color: #E80000;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="orange" class="ui circular label"
+            style="background-color: #F27809;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="yellow" class="ui circular label"
+            style="background-color: #FFBA22;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="green" class="ui circular label"
+            style="background-color: #009845;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="mint" class="ui circular label"
+            style="background-color: #00BFA8;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="sky" class="ui circular label"
+            style="background-color: #009DFF;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="blue" class="ui circular label"
+            style="background-color: #364DEB;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="purple" class="ui circular label"
+            style="background-color: #7119F2;"></a>
+          <a onclick="bg_change($(this).attr('id'))" id="pink" class="ui circular label"
+            style="background-color: #FF0080;"></a>
         </div>
       </div>
       <div class="col-5 offset-1" style="margin-top: 8%;">
@@ -261,84 +250,110 @@
             <div class="flip-card-back">
               <img class="d-card" id="s1_card_front" src="images/s1/red/red_card_front.png" alt="digging contents"
                 style="width:100%">
-                <div class = "overlay">
-                 <img class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png" alt="digging caption"
-                style="width:100%">
+              <div class="overlay">
+                <img class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png" alt="digging caption"
+                  style="width:100%">
               </div>
             </div>
           </div>
         </div>
-        <p id="s1_text" class="text-white"
+        <p data-aos="flip-right" id="s1_text" class="text-white"
           style="text-align: center;font-size: 1.5rem;width: 59%;transform: rotate(-60deg);padding-left: 62%;/* padding-left: 50%; */">
           STYLE/BEAUTY</p>
       </div>
       <div class="col">
-        <img class="float-right mr-5 mb-5" src="images/s1/mouse.png" style ="width:1%">
+        <img class="float-right mr-5 mb-5" src="images/s1/mouse.png" style="width:1%">
       </div>
     </div>
-    <p id = "s1_color" style = "display:none;">
+    <p id="s1_color" style="display:none;">
     </p>
-    <div class= "row">
-      <img id = "s1_image_full" src = "images/s1/red/red_image.png" style = "width:100%;">
+    <div data-aos="zoom-in-up" class="row">
+      <img id="s1_image_full" src="images/s1/red/red_image.png" style="width:100%;">
+
+      <figure><video src="images/s1/pink/pink_video.mp4" autoplay="autoplay" loop="loop" muted=""></video></figure>
 
     </div>
-    
+
+    <div class="container-img">
+      <img src="images/s2/S2-gradient background.png" class="image">
+
+      <div class="overlay" style="text-align:center; top: 39%;">
+        <div class="row">
+          <div class="col-3">
+            <p class="text-white" data-aos="zoom-in">Dig out your favorite informations</p>
+            <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
+          </div>
+          <div data-aos="zoom-in" class="col">
+            <img src="images/s2/S2.png" width="20%">
+          </div>
+
+          <div data-aos="zoom-in" class="col-3" style="margin-top: 20%;">
+            <span class="text-white">and become a digging influencer!</span>
+            <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <canvas id="background" width="1000" height="1000"></canvas>
+
   </div>
-  <!-- <div class="box_holder">
-        <div class="front">Some content here</div>
-        <div class="back">Behind</div>
-      </div> -->
+
+ 
 
   <script>
+    
+
+
+
+
+    
+
+    AOS.init({
+      duration: 1200,
+    })
+
+    // AOS.init();
+
+
 
     function bg_change(color) {
+
+      $(".ui.circular.label").removeClass("s1_clicked");
       document.getElementById("s1_card").src = "images/s1/" + color + "/" + color + "_card_back.png";
       document.getElementById("s1_card_front").src = "images/s1/" + color + "/" + color + "_card_front.png";
       document.getElementById("s1_card_caption").src = "images/s1/" + color + "/" + color + "_caption.png";
       document.getElementById("s1_color").textContent = color;
-      document.getElementById("s1_image_full").src ="images/s1/" + color + "/" + color + "_image.png"; 
+      document.getElementById(color).classList.add("s1_clicked");
+      document.getElementById("s1_image_full").src = "images/s1/" + color + "/" + color + "_image.png";
+      document.getElementById("s1").style.backgroundColor = document.getElementById(color).style.backgroundColor;
+
       switch (color) {
         case 'red':
-          document.getElementById("s1").style.backgroundColor = "#E80000";
-          document.getElementById("r_btn").src = "images/s1/red/red_button_press.png";
           document.getElementById("s1_text").textContent = "STYLE/BEAUTY";
           break;
         case 'orange':
-          document.getElementById("s1").style.backgroundColor = "#F27809";
-          document.getElementById("o_btn").src = "images/s1/orange/orange_button_press.png";
           document.getElementById("s1_text").textContent = "PLACE";
           break;
         case 'yellow':
-          document.getElementById("s1").style.backgroundColor = "#FFBA22";
-          document.getElementById("y_btn").src = "images/s1/yellow/yellow_button_press.png";
           document.getElementById("s1_text").textContent = "LIVING";
           break;
         case 'green':
-          document.getElementById("s1").style.backgroundColor = "#009845";
-          document.getElementById("g_btn").src = "images/s1/green/green_button_press.png";
           document.getElementById("s1_text").textContent = "PET";
           break;
         case 'mint':
-          document.getElementById("s1").style.backgroundColor = "#00BFA8";
-          document.getElementById("m_btn").src = "images/s1/mint/mint_button_press.png";
           document.getElementById("s1_text").textContent = "SCUBA DIVING";
 
           break;
         case 'sky':
-          document.getElementById("s1").style.backgroundColor = "#009DFF";
-          document.getElementById("s_btn").src = "images/s1/sky/sky_button_press.png";
           document.getElementById("s1_text").textContent = "HOBBY";
-
           break;
         case 'blue':
-          document.getElementById("s1").style.backgroundColor = "#364DEB";
-          document.getElementById("b_btn").src = "images/s1/blue/blue_button_press.png";
           document.getElementById("s1_text").textContent = "KNOWLEDGE/IT";
 
           break;
         case 'purple':
-          document.getElementById("s1").style.backgroundColor = "#7119F2";
-          document.getElementById("p_btn").src = "images/s1/purple/purple_button_press.png";
           document.getElementById("s1_text").textContent = "ENTERTAINMENT";
 
           break;
@@ -355,32 +370,38 @@
       }
     }
 
-    $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-            var rotationStr = "rotate(" + -0.5*scroll + "deg)";
-              if(scroll<=60){
-            $(".d-card").css({
-                "-webkit-transform": rotationStr,
-                "-moz-transform": rotationStr,
-                "transform": rotationStr,
-                "opacity": rotationStr,
-                "width": (100 + 4 * scroll) + "%"
-              });
-              $("#s1_card_caption").css({
-                "opacity": 1 - 0.033 * scroll
-              });
-              $("#s1_text").css({
-                "padding-left": (62 + 5 * scroll) + "%"
-              }); 
-              $("#s1_title").css({
-                "margin-left": (0 -8 * scroll) + "%"
-              });
-          }else if (scroll<200){
-           $("#s1_card_front").css({ "width": (100 + scroll)+"%"})
-
-          }
-
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop() / 10;
+      console.log(scroll);
+      var rotationStr = "rotate(" + -0.5 * scroll + "deg)";
+      if (scroll <= 60) {
+        $(".d-card").css({
+          "-webkit-transform": rotationStr,
+          "-moz-transform": rotationStr,
+          "transform": rotationStr,
+          "opacity": rotationStr,
+          "width": (100 + 4 * scroll) + "%"
         });
+        $("#s1_card_caption").css({
+          "opacity": 1 - 0.033 * scroll
+        });
+        $("#s1_text").css({
+          "padding-left": (62 + 5 * scroll) + "%"
+        });
+        $("#s1_title").css({
+          "margin-left": (0 - 8 * scroll) + "%"
+        });
+      } else if (scroll < 65) {
+        $("#s1_card_front").css({ "width": (100 + scroll) + "%" })
+      } else {
+        //안먹음
+        $(".d-card").css({
+          "width": (100 - 4 * scroll) + "%"
+        });
+
+      }
+
+    });
 
 
 
@@ -392,12 +413,14 @@
 
     var images = new Array();
     var currentLocation = 0;
-    var totalImages = 200;
+    var totalImages = 580;
 
-    for (var i = 1; i < totalImages; i++) {
+    for (var i = 101; i < totalImages; i++) {
       var img = new Image;
-      var slug = '000' + i;
-      img.src = 'https://s3.amazonaws.com/clearmotion/hero/high-min/frame' + slug.slice(-3) + '-low.jpg'
+      // var slug = '000' + i    slug.slice(-2) ;
+      var slug = '0'+i;
+      // img.src = 'images/s5/s5_' +  + '.png'
+      img.src = 'images/s5/s5_' + i +'.png'
       images.push(img);
     }
 
