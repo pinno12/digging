@@ -77,15 +77,13 @@
 
     .flip-card {
       background-color: transparent;
-      width: 50%;
+      width: 60%;
       height: 100%;
       perspective: 1000px;
     }
 
     .flip-card-inner {
       position: relative;
-      /* width: 100%; */
-      /* height: 100%; */
       text-align: center;
       transition: transform 1s;
       transform-style: preserve-3d;
@@ -211,8 +209,8 @@
 
 
 .scroll-container {
-  height: 100vh;
-  background: black;
+  /* height: 100vh; */
+  /* background: black; */
 }
 .speak {
   margin: 150vh 0;
@@ -244,17 +242,80 @@
   background-repeat: no-repeat;
 }
 
+/*  */
+
+::-webkit-scrollbar{width:2px;height:2px;}
+::-webkit-scrollbar-button{width:2px;height:2px;}
+
+div{
+  box-sizing:border-box;
+}
+
+body {
+  background: #111;
+}
+
+.horizontal-scroll-wrapper{
+  /* position:absolute; */
+  display:block;
+  /* top:0; */
+  /* left:0; */
+  width:20%;
+  height:100vw;
+  /* max-height:500px; */
+  margin:0;
+  background:#abc;
+  overflow-y:auto;
+  overflow-x:hidden;
+  transform:rotate(-90deg) translateY(-20%);
+  transform-origin:right top;
+}
+.horizontal-scroll-wrapper > div{
+  display:block;
+  padding:5px;
+  background:#cab;
+  transform:rotate(90deg);
+  transform-origin: right top;
+}
+
+.squares{
+  padding:60px 0 0 0;
+}
+
+.squares > div{
+  width:30%;
+  height:30%;
+  margin:10px;
+}
+
+.rectangles{
+  top:100px;
+  padding:100px 0 0 0;
+}
+.rectangles > div{
+  width:140px;
+  height:60px;
+  margin:50px 10px;
+  padding:5px;
+  background:#cab;
+  transform:rotate(90deg) translateY(80px);
+  transform-origin: right top;
+}
+
   </style>
   <!-- Custom styles for this template -->
 </head>
 
 <body class="d-flex flex-column h-100">
+
   <div class="container-fluid">
+
     <div class="row" data-aos="zoom-out" id="s1" style="background-color:#E80000; height:110vh">
+      
       <div class="col-4" style=" margin-left: 2%;  margin-top: 4%;">
         <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img
               src="images/s1/emoji.png"></span> </h1>
-        <div style="margin-top:40%">
+        <div style="margin-top:80%">
 
           <a onclick="bg_change($(this).attr('id'))" class="ui circular label s1_clicked" id="red"
             style="background-color: #E80000;"></a>
@@ -293,8 +354,8 @@
             </div>
           </div>
         </div>
-        <p data-aos="flip-right" id="s1_text" class="text-white"
-          style="text-align: center;font-size: 1.5rem;width: 59%;transform: rotate(-60deg);padding-left: 62%;/* padding-left: 50%; */">
+        <p id="s1_text" class="text-white"
+          style="margin-top:-25%; text-align: center;font-size: 1.5rem;width: 59%;transform: rotate(-60deg);padding-left: 71%;">
           STYLE/BEAUTY</p>
       </div>
       <div class="col">
@@ -304,79 +365,178 @@
     <p id="s1_color" style="display:none;">
     </p>
     <div data-aos="zoom-in-up" class="row">
-      <img id="s1_image_full" src="images/s1/red/red_image.png" style="width:100%;">
+      <img id="s1_image" class = "s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
 
-      <figure><video src="images/s1/pink/pink_video.mp4" autoplay="autoplay" loop="loop" muted=""></video></figure>
-
+      <figure class = "m-0 p-0" style="width:100%"><video src="images/s1/pink/pink_video.mp4" id = "s1_video" class = "s1_video d-none" autoplay="autoplay" loop="loop" style= "width:100%;"></video></figure>
+      
+ 
     </div>
 
-    <div class="container-img">
-      <img src="images/s2/S2-gradient background.png" class="image">
 
-      <div class="overlay" style="text-align:center; top: 39%;">
-        <div class="row">
+    <div class="row container-img " data-aos="zoom-in" >
+      <img src="images/s3/S3-gradient background.png" class="image" style="width:110%;">
+
+      <div class="overlay" style="text-align:center;">
+
           <div class="col-3">
-            <p class="text-white" data-aos="zoom-in">Dig out your favorite informations</p>
+            <p class="text-white" data-aos="slide-up">Dig out your favorite informations</p>
             <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
           </div>
-          <div data-aos="zoom-in" class="col">
-            <img src="images/s2/S2.png" width="20%">
+          <div data-aos="zoom-in" class="col" style="margin-top: 14%;">
+            <img src="images/s2/S2.png" width="56%">
           </div>
 
-          <div data-aos="zoom-in" class="col-3" style="margin-top: 20%;">
+          <div data-aos="zoom-in" class="col-3" style="margin-top: 40%;">
             <span class="text-white">and become a digging influencer!</span>
             <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
           </div>
-        </div>
-
+     
       </div>
     </div>
-<div class = "row">
-  <div class="scroll-container">
-    <section class="scroll-sequence__container apple-container">
-      <div class="scroll-sequence apple-sequence"></div>
-      <div class="scroll-sequence__content">
-        <div class="speak">
-          <h1>Scroll Sequence</h1>
-          <p>Just start scrolling</p>
-        </div>
-        <div class="speak">
-          <h1>This is Apple's image sequence</h1>
-          <p>All copyrights to them. Please don't sue me!</p>
-        </div>
-        <div class="speak">
-          <h1>The Text Animation</h1>
-          <p>Is created with Scroll-out.js. Go check it out!</p>
-        </div>
+
+      
+      <div class="row" data-aos="zoom-in">
+       
+      <video autoplay muted loop id="myVideo" width = "100%">
+        <source src="images/s3/S3.mp4" type="video/mp4" >
+  
+      </video>
+
       </div>
-    </section>
-  <!--   <div class="spacer" style="height: 80vh"></div> -->
- 
-  <!--   <div class="spacer"></div> -->
+    <!-- </div> -->
+<div class = "row">
+
+    </div>
+
+  
+    
+
+    <div class="row">
+      <div class="horizontal-scroll-wrapper squares">
+        <div>item 1</div>
+        <div>item 2</div>
+        <div>item 3</div>
+        <div>item 4</div>
+        <div>item 5</div>
+        <div>item 6</div>
+        <div>item 7</div>
+        <div>item 8</div>
+      </div>
+
+
+      <section class="scroll-sequence__container apple-container" style = "margin-left:-5%;">
+        <div class="scroll-sequence apple-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1>Any information you dig</h1>
+            <p>내가 디깅하는 수많은 정보들은</p>
+          </div>
+          <div class="speak">
+            <h1>This is Apple's image sequence</h1>
+            <p>All copyrights to them. Please don't sue me!</p>
+          </div>
+          <div class="speak">
+            <h1>The Text Animation</h1>
+            <p>Is created with Scroll-out.js. Go check it out!</p>
+          </div>
+        </div>
+      </section>
+  
+      <div class="row" data-aos="zoom-in">
+       <img  data-aos="slide-up" src = "images/s6/s6_rose_card.png" width="100%">
+        <video autoplay muted loop id="myVideo" width = "100%">
+          <source src="images/s6/rose_player.mp4" type="video/mp4" >
+    
+        </video>
+  
+        </div>
+
+        <section class="scroll-sequence__container s7-container">
+          <div class="scroll-sequence s7-sequence"></div>
+          <div class="scroll-sequence__content">
+            <div class="speak">
+              <h1>This took me a while</h1>
+              <p>To get right, but here it is!</p>
+            </div>
+            <div class="speak">
+              <h1>Apple's images load faster</h1>
+              <p>Compression favors less details. So, shots of the forest was not the best idea :P</p>
+            </div>
+            <div class="speak">
+              <h1>Running out of things</h1>
+              <p>To say so imma head out.</p>
+            </div>
+        </section>
+
+        <div class = "row">
+          <video autoplay muted loop  width = "100%">
+            <source src="images/s10/s9_video.mp4" type="video/mp4" >
+          </video>
+        </div>
+
+        <div class = "row">
+          <video autoplay muted loop  width = "100%">
+            <source src="images/s11/s11.mp4" type="video/mp4" >
+          </video>
+        </div>
+        <div class = "row">
+          <video autoplay muted loop  width = "100%">
+            <source src="images/s12/s12_main.mp4" type="video/mp4" >
+          </video>
+          <video autoplay muted loop  width = "100%">
+            <source src="images/s12/s12_main2.mp4" type="video/mp4" >
+          </video>
+          <video autoplay muted loop  width = "100%">
+            <source src="images/s12/s12_main3.mp4" type="video/mp4" >
+          </video>
+          <video autoplay muted loop  width = "100%">
+            <source src="images/s12/s12_win.mp4" type="video/mp4" >
+          </video>
+        </div>
+
+
+    
+
+
+
+    </div>
   </div>
-
-</div>
-    <canvas id="background" width="1000" height="1000"></canvas>
-
-
-
-
-
-  </div>
-
- 
-
   <script>
     
-    const appleSequenceImages = [];
-const treeSequenceImages = [];
+$('video').each(function(){
+    if ($(this).is(":in-viewport")) {
+        $(this)[0].play();
+    } else {
+        $(this)[0].pause();
+    }
+})
 
-for (let i = 100; i <= 500; i ++) {
-  appleSequenceImages.push(`s5_${`${i}`.slice(-5)}.png`);
+
+    
+const appleSequenceImages = [];
+const s7 = [];
+for (let i = 0; i <= 9; i ++) {
+  appleSequenceImages.push(`s5_00${`${i}`.slice(-5)}.png`);
 }
-for (let i = 0; i <= 98; i ++) {
-  treeSequenceImages.push(`${`${i}`.slice(-3)}.png`);
+
+for (let i = 10; i <= 99; i ++) {
+  appleSequenceImages.push(`s5_0${`${i}`.slice(-6)}.png`);
 }
+for (let i = 100; i <= 580; i ++) {
+  appleSequenceImages.push(`s5_${`${i}`.slice(-6)}.png`);
+  // s7.push(`${`${i}`.slice(-3)}.png`);
+}
+
+for (let i = 1; i <= 9; i ++) {
+  s7.push(`s7_0${`${i}`.slice(-6)}.png`); 
+}
+
+for (let i = 10; i <= 42; i ++) {
+  s7.push(`s7_${`${i}`.slice(-6)}.png`); 
+}
+
+
+// console.log(appleSequenceImages);
 
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
@@ -715,16 +875,16 @@ const appleSequence = new ScrollSequence({
   starts: 'in'
 });
 
-// const treeSequence = new ScrollSequence({
-//   container: '.tree-sequence',
-//   scrollWith: '.tree-container',
-//   images: treeSequenceImages,
-//   imagesRoot: 'https://jacobbelanger.com/assets/sequence/',
-//   priorityFrames: [0, 20, 40, 60, 90],
-//   cover: true,
-//   starts: 'out',
-//   ends: 'in'
-// });
+const s7Sequence = new ScrollSequence({
+  container: '.s7-sequence',
+  scrollWith: '.s7-container',
+  images: s7,
+  imagesRoot: 'images/s7/',
+  priorityFrames: [0, 20, 40, 60, 90],
+  cover: true,
+  starts: 'out',
+  ends: 'in'
+});
 
 // END SCROLL_SEQUENCE CODE
 
@@ -751,13 +911,30 @@ const appleSequence = new ScrollSequence({
     function bg_change(color) {
 
       $(".ui.circular.label").removeClass("s1_clicked");
+      document.getElementById(color).classList.add("s1_clicked");
+
       document.getElementById("s1_card").src = "images/s1/" + color + "/" + color + "_card_back.png";
       document.getElementById("s1_card_front").src = "images/s1/" + color + "/" + color + "_card_front.png";
       document.getElementById("s1_card_caption").src = "images/s1/" + color + "/" + color + "_caption.png";
       document.getElementById("s1_color").textContent = color;
-      document.getElementById(color).classList.add("s1_clicked");
-      document.getElementById("s1_image_full").src = "images/s1/" + color + "/" + color + "_image.png";
+      
+    
       document.getElementById("s1").style.backgroundColor = document.getElementById(color).style.backgroundColor;
+
+      if (color == "mint" || color == "pink" || color == "sky" || color == "purple"){
+        $(".s1_video").removeClass("d-none");
+        $(".s1_image").addClass("d-none");
+        if(color == "purple") {
+          document.getElementById("s1_video").src = "images/s1/" + color + "/" + color + "_audio.mp4";
+        }else{
+        document.getElementById("s1_video").src = "images/s1/" + color + "/" + color + "_video.mp4";
+      }
+        
+      } else{
+        $(".s1_image").removeClass("d-none");
+        $(".s1_video").addClass("d-none");
+        document.getElementById("s1_image").src = "images/s1/" + color + "/" + color + "_image.png";
+      }
 
       switch (color) {
         case 'red':
@@ -800,9 +977,15 @@ const appleSequence = new ScrollSequence({
       }
     }
 
+
+
     $(window).scroll(function () {
       var scroll = $(window).scrollTop() / 10;
       console.log(scroll);
+
+
+
+
       var rotationStr = "rotate(" + -0.5 * scroll + "deg)";
       if (scroll <= 60) {
         $(".d-card").css({
@@ -835,62 +1018,6 @@ const appleSequence = new ScrollSequence({
 
 
 
-    $(document).ready(function () {
-      $('.box_holder').click(function () {
-        $(this).toggleClass('show_info')
-      });
-    });
-
-    var images = new Array();
-    var currentLocation = 0;
-    var totalImages = 580;
-
-    for (var i = 101; i < totalImages; i++) {
-      var img = new Image;
-      // var slug = '000' + i    slug.slice(-2) ;
-      var slug = '0'+i;
-      // img.src = 'images/s5/s5_' +  + '.png'
-      img.src = 'images/s5/s5_' + i +'.png'
-      images.push(img);
-    }
-
-    var c = document.getElementById("background");
-    var ctx = c.getContext("2d");
-
-    var mouseWheel = function () {
-      var newLocation = null;
-      window.addEventListener('wheel', function (e) {
-        e.preventDefault(); // No scroll
-
-        // update our variable at high frequency
-        var delta = Math.max(-1, Math.min(1, e.deltaY));
-        if (delta == -1) currentLocation += 1;
-        if (delta == 1) currentLocation -= 1;
-        if (currentLocation < 0) currentLocation = 0;
-        if (currentLocation >= (totalImages - 1)) currentLocation = (totalImages - 1);
-
-        if (newLocation === null) { // if set, we already are waiting to draw
-          requestAnimationFrame(setImage);
-        }
-        newLocation = currentLocation;
-      });
-
-      function setImage() {
-        if (images[newLocation]) {
-          ctx.fillRect(0, 0, c.width, c.height);
-          ctx.drawImage(images[newLocation], 0, 0, 1000, 1000);
-        }
-        newLocation = null; // so the throttler knows we can draw again
-      }
-
-    }
-
-
-    images[0].onload = function () {
-      ctx.fillRect(0, 0, c.width, c.height);
-      ctx.drawImage(images[currentLocation], 0, 0, 1000, 1000);
-      mouseWheel();
-    };
   </script>
 
 
