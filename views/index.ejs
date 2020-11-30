@@ -7,7 +7,10 @@
   <meta name="description" content="디깅, 홍대, 전시, 졸업, digging, art, show, rose">
   <meta name="author" content="김세현, 낭은영, 설경민, 정승원, 디깅">
   <meta name="generator" content="Jekyll v4.1.1">
-  <title>디깅</title>
+  <meta property="og:title" content="원하는 정보를 내손안에, DIGGING">
+  <meta property="og:description" content="UX UI 팀 디깅">
+  <meta property="og:image" content="/images/s2/S2.png">
+  <title>DIGGING</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link
@@ -266,56 +269,30 @@
     }
 
     .horizontal-scroll-wrapper {
-      /* position:absolute; */
+ 
       display: block;
-      /* top:0; */
-      /* left:0; */
-      width: 20%;
-      height: 100vw;
-      /* max-height:500px; */
+ 
+      /* width: 2000px; */
+      /* height: 100vw; */
+      max-height:100vw;
       margin: 0;
-      background: #abc;
       overflow-y: auto;
       overflow-x: hidden;
-      transform: rotate(-90deg) translateY(-20%);
+      transform: rotate(-90deg) translateY(-100%);
       transform-origin: right top;
     }
 
-    .horizontal-scroll-wrapper>div {
-      display: block;
-      padding: 5px;
-      background: #cab;
+    .horizontal-scroll-wrapper>img {
+      height:50%;
       transform: rotate(90deg);
-      transform-origin: right top;
+     
     }
 
-    .squares {
-      padding: 60px 0 0 0;
-    }
-
-    .squares>div {
-      width: 30%;
-      height: 30%;
-      margin: 10px;
-    }
-
-    .rectangles {
-      top: 100px;
-      padding: 100px 0 0 0;
-    }
-
-    .rectangles>div {
-      width: 140px;
-      height: 60px;
-      margin: 50px 10px;
-      padding: 5px;
-      background: #cab;
-      transform: rotate(90deg) translateY(80px);
-      transform-origin: right top;
-    }
-
+   
     #s3-back {
-      background-image: url("images/s3/S3-gradient-background.png")
+      background-image: url("images/s2/S2.png");
+      background-repeat: no-repeat;
+    background-size: 100% 100%;
     }
   </style>
   <!-- Custom styles for this template -->
@@ -399,11 +376,8 @@
         <p class="text-white">Dig out your favorite informations</p>
         <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
       </div>
-      <div class="col" style="margin-top: 14%;">
-        <img src="images/s2/S2.png" width="56%">
-      </div>
-
-      <div data-aos="zoom-in" class="col-3" style="margin-top: 40%;">
+     
+      <div data-aos="zoom-in" class="offset-4 col-3" style="margin-top: 40%;">
         <span class="text-white">and become a digging influencer!</span>
         <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
       </div>
@@ -451,15 +425,12 @@
 
     <div class="row">
       <div class="horizontal-scroll-wrapper squares">
-        <div>item 1</div>
-        <div>item 2</div>
-        <div>item 3</div>
-        <div>item 4</div>
-        <div>item 5</div>
-        <div>item 6</div>
-        <div>item 7</div>
-        <div>item 8</div>
+        <img src = "images/s4/s4_1.png">
+        <img src = "images/s4/s4_2.png">
+        <img src = "images/s4/s4_3.png">
+        <img src = "images/s4/s4_4.png">
       </div>
+    </div>
 
 
       <section class="scroll-sequence__container apple-container">
@@ -484,9 +455,7 @@
         <img data-aos="slide-up" src="images/s6/s6_rose_card.png" width="100%">
         <video autoplay muted loop id="myVideo" width="100%">
           <source src="images/s6/rose_player.mp4" type="video/mp4">
-
         </video>
-
       </div>
 
       <section class="scroll-sequence__container s7-container">
@@ -504,13 +473,35 @@
             <h1>Running out of things</h1>
             <p>To say so imma head out.</p>
           </div>
+        </div>
       </section>
 
-      <div class="row">
+      <div class="row" class="s10">
         <video autoplay muted loop width="100%">
           <source src="images/s10/s9_video.mp4" type="video/mp4">
         </video>
+
+    
       </div>
+      <div class = "row" class = "s10">
+      <section class="scroll-sequence__container s9-container">
+        <div class="scroll-sequence s9-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>           
+          </div>
+        </div>
+      </section>
+    </div>
 
       <div class="row">
         <video autoplay muted loop width="100%">
@@ -518,6 +509,25 @@
         </video>
       </div>
       <div class="row">
+        <section class="scroll-sequence__container s12-container">
+          <div class="scroll-sequence s12-sequence"></div>
+          <div class="scroll-sequence__content">
+            <div class="speak">
+              <h1></h1>
+              <p></p>
+            </div>
+            <div class="speak">
+              <h1></h1>
+              <p></p>
+            </div>
+            <div class="speak">
+              <h1></h1>
+              <p></p>           
+            </div>
+          </div>
+            
+         
+        </section>
         <video autoplay muted loop width="100%">
           <source src="images/s12/S12_main.mp4" type="video/mp4">
         </video>
@@ -544,25 +554,24 @@
 
     const appleSequenceImages = [];
     const s7 = [];
-    // for (let i = 0; i <= 9; i ++) {
-    //   appleSequenceImages.push(`s5_00${`${i}`.slice(-5)}.png`);
-    // }
-
-    // for (let i = 10; i <= 99; i ++) {
-    //   appleSequenceImages.push(`s5_0${`${i}`.slice(-6)}.png`);
-    // }
+    const s9Images = [];
+    const s12Images = [];
+  
     for (let i = 0; i <= 580; i++) {
       appleSequenceImages.push(`s5_${`${i}`.slice(-6)}.png`);
       // s7.push(`${`${i}`.slice(-3)}.png`);
     }
-    console.log(appleSequenceImages)
-
-    for (let i = 1; i <= 9; i++) {
-      s7.push(`s7_0${`${i}`.slice(-6)}.png`);
+      
+    for (let i = 0; i <= 42; i++) {
+      s7.push(`s7_${`${i}`.slice(-6)}.png`);
     }
 
-    for (let i = 10; i <= 42; i++) {
-      s7.push(`s7_${`${i}`.slice(-6)}.png`);
+    for (let i = 0; i <= 910; i++) {
+      s9Images.push(`s9_${`${i}`.slice(-6)}.png`);
+    }
+
+    for (let i = 0; i <= 540; i++) {
+      s12Images.push(`s12_intro_${`${i}`.slice(-6)}.png`);
     }
 
 
@@ -916,6 +925,27 @@
       ends: 'in'
     });
 
+    const s9Sequence = new ScrollSequence({
+      container: '.s9-sequence',
+      scrollWith: '.s9-container',
+      images: s9Images,
+      imagesRoot: 'images/s10/s9_png/',
+      priorityFrames: [0, 20, 40, 60, 90],
+      cover: true,
+      starts: 'out',
+      ends: 'in'
+    });
+
+    const s12Sequence = new ScrollSequence({
+      container: '.s12-sequence',
+      scrollWith: '.s12-container',
+      images: s12Images,
+      imagesRoot: 'images/s12/s12_intro/',
+      priorityFrames: [0, 20, 40, 60, 90],
+      cover: true,
+      starts: 'out',
+      ends: 'in'
+    });
     // END SCROLL_SEQUENCE CODE
 
     // ScrollOut({
@@ -997,9 +1027,7 @@
           document.getElementById("s1_text").textContent = "ENTERTAINMENT";
 
           break;
-        case 'pink':
-          document.getElementById("s1").style.backgroundColor = "#FF0080";
-          document.getElementById("pink_btn").src = "images/s1/pink/pink_button_press.png";
+        case 'pink':    
           document.getElementById("s1_text").textContent = "PEOPLE";
 
           break;
