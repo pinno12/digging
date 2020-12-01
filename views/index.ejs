@@ -8,7 +8,7 @@
   <meta name="author" content="김세현, 낭은영, 설경민, 정승원, 디깅">
   <meta name="generator" content="Jekyll v4.1.1">
   <meta property="og:title" content="원하는 정보를 내손안에, DIGGING">
-  <!-- <meta property="og:description" content="UX UI 팀 디깅"> -->
+  <meta property="og:description" content="digging platform uxui design">
   <meta property="og:image" content="/images/s2/S2.png">
   <title>DIGGING</title>
 
@@ -46,6 +46,10 @@
   <style>
     .fade {
       opacity: 1;
+    }
+
+    body {
+      background-color: black;
     }
 
     .s1_clicked {
@@ -212,8 +216,8 @@
 
 
     .scroll-container {
-      /* height: 100vh; */
-      /* background: black; */
+      height: 100vh;
+      background: pink;
     }
 
     .speak {
@@ -248,33 +252,19 @@
       background-repeat: no-repeat;
     }
 
-    /*  */
 
-    ::-webkit-scrollbar {
-      width: 2px;
-      height: 2px;
-    }
+    /* ::-webkit-scrollbar{width:2px;height:2px;} */
 
-    ::-webkit-scrollbar-button {
-      width: 2px;
-      height: 2px;
-    }
 
-    div {
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #111;
-    }
 
     .horizontal-scroll-wrapper {
 
       display: block;
 
-      /* width: 2000px; */
-      /* height: 100vw; */
-      max-height: 100vw;
+      min-width: 100vh;
+
+      height: 100vw;
+
       margin: 0;
       overflow-y: auto;
       overflow-x: hidden;
@@ -283,7 +273,9 @@
     }
 
     .horizontal-scroll-wrapper>img {
-      height: 50%;
+      height: 100%;
+      padding: 22.27%;
+
       transform: rotate(90deg);
     }
 
@@ -293,7 +285,12 @@
       background-size: 100% 100%;
     }
 
-  
+
+    #s15-back {
+      background-image: url("images/s15/s15_background.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
   </style>
   <!-- Custom styles for this template -->
 </head>
@@ -302,8 +299,8 @@
   <div class="container-fluid">
     <div class="row" data-aos="zoom-out" id="s1" style="background-color:#E80000; height:110vh">
       <div class="col-4" style=" margin-left: 2%;  margin-top: 4%;">
-        <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img loading="lazy"
-              src="images/s1/emoji.png"></span> </h1>
+        <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img
+              loading="lazy" src="images/s1/emoji.png"></span> </h1>
         <div style="margin-top:80%">
           <a onclick="bg_change($(this).attr('id'))" class="ui circular label s1_clicked" id="red"
             style="background-color: #E80000;"></a>
@@ -333,11 +330,11 @@
                 style="width:100%">
             </div>
             <div class="flip-card-back">
-              <img loading="lazy" class="d-card" id="s1_card_front" src="images/s1/red/red_card_front.png" alt="digging contents"
-                style="width:100%">
+              <img loading="lazy" class="d-card" id="s1_card_front" src="images/s1/red/red_card_front.png"
+                alt="digging contents" style="width:100%">
               <div class="overlay">
-                <img loading="lazy" class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png" alt="digging caption"
-                  style="width:100%">
+                <img loading="lazy" class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png"
+                  alt="digging caption" style="width:100%">
               </div>
             </div>
           </div>
@@ -350,7 +347,7 @@
         <img loading="lazy" class="float-right mr-5 mb-5" src="images/s1/mouse.png" style="width:10%">
       </div>
     </div>
-    
+
     <div data-aos="zoom-in-up" class="row">
       <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
       <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
@@ -361,7 +358,6 @@
         style="top:50%; opacity: 22%; font-weight: 700; font-size:13rem;">DIGGING</h1>
     </div>
     <div class="row" id="s3-back" class="s3_back">
-
       <div class="item item--secondary" data-aos="slide-up" data-aos-anchor="#trigger-left">
         <div class="col-3">
           <p class="text-white">Dig out your favorite informations</p>
@@ -374,28 +370,26 @@
           <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
         </div>
       </div>
-
       <div class="void" style="height:100%; Background-color:transparent;"></div>
-
       <div style="Background-color:transparent;" id="trigger-left"></div>
       <div class="void" style="height:30%; Background-color:transparent;"></div>
       <div style="Background-color:transparent;" id="trigger-right"></div>
-
     </div>
 
 
     <div class="row" data-aos="zoom-in">
-      <video autoplay muted loop width="100%">  
+      <video autoplay muted loop width="100%">
         <source src="images/s3/S3.mp4" type="video/mp4">
       </video>
     </div>
 
     <div class="row">
-      <div class="horizontal-scroll-wrapper squares">
+      <div class="horizontal-scroll-wrapper" style="margin-top: -39%; background-color: white;">
         <img loading="lazy" src="images/s4/s4_1.png">
         <img loading="lazy" src="images/s4/s4_2.png">
         <img loading="lazy" src="images/s4/s4_3.png">
         <img loading="lazy" src="images/s4/s4_4.png">
+        <!-- <img loading="lazy" src="images/s4/s4_full.png"> -->
       </div>
     </div>
 
@@ -424,32 +418,36 @@
       </video>
     </div>
 
-    <section class="scroll-sequence__container s7-container">
-      <div class="scroll-sequence s7-sequence"></div>
-      <div class="scroll-sequence__content">
-        <div class="speak">
-          <h1>This took me a while</h1>
-          <p>To get right, but here it is!</p>
+    <div class="row" data-aos="zoom-in" class="s7">
+      <section class="scroll-sequence__container s7-container">
+        <div class="scroll-sequence s7-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
         </div>
-        <div class="speak">
-          <h1>Apple's images load faster</h1>
-          <p>Compression favors less details. So, shots of the forest was not the best idea :P</p>
-        </div>
-        <div class="speak">
-          <h1>Running out of things</h1>
-          <p>To say so imma head out.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="row" class="s10">
-      <video autoplay muted loop width="100%">
-        <source src="images/s10/s9_video.mp4" type="video/mp4">
-      </video>
-
-
+      </section>
     </div>
-    <div class="row" class="s10">
+
+    <div class="row" class="s8">
+      <video autoplay muted loop width="100%">
+        <source src="images/s8/s8_1.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s8/s8_2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="row" class="s9">
       <section class="scroll-sequence__container s9-container">
         <div class="scroll-sequence s9-sequence"></div>
         <div class="scroll-sequence__content">
@@ -469,11 +467,19 @@
       </section>
     </div>
 
-    <div class="row">
+    <div class="row" class="s10">
+      <video autoplay muted loop width="100%">
+        <source src="images/s10/s9_video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="row" class="s11">
       <video autoplay muted loop width="100%">
         <source src="images/s11/s11.mp4" type="video/mp4">
       </video>
     </div>
+
+
     <div class="row">
       <section class="scroll-sequence__container s12-container">
         <div class="scroll-sequence s12-sequence"></div>
@@ -506,6 +512,102 @@
         <source src="images/s12/S12_win.mp4" type="video/mp4">
       </video>
     </div>
+
+    <div class="row" class="s13_14">
+      <section class="scroll-sequence__container s13-container">
+        <div class="scroll-sequence s13-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <div id="s15-back" class="row">
+      <div class="row">
+        <div class="col align-self-end">
+          <h1 class="display-5">A lot of people’s information gathered together</h1>
+          <h3>한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
+        </div>
+        <img src="images/s15/s15_card.png" width="100%">
+        <div class="col align-self-center">
+          <h1 class="display-5">DIGGING</h1>
+          <p>Start digging NOW!</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-between">
+        <div class="col">
+          <img src="images/s15/s15_name1.png" width="100%">
+        </div>
+        <div class="col">
+          <img src="images/s15/s15_name2.png" width="100%">
+        </div>
+        <div class="col">
+          <img src="images/s15/s15_name3.png" width="100%">
+        </div>
+      </div>
+
+      <div class="row justify-content-between">
+
+        <div class="col">
+          <p>
+            Developer Jung Seung Won
+            Professor Yoon Jaeyoung
+            Hollys Coffee
+            Aquarius Rhapsody
+            RÉCORD
+            Slyrose_bp
+            Emoji island
+            Black Pink Rose
+            Monster drink
+          </p>
+        </div>
+
+        <div class="col">
+          <p>
+            Developer Jung Seung Won
+            Professor Yoon Jaeyoung
+            Hollys Coffee
+            Aquarius Rhapsody
+            RÉCORD
+            Slyrose_bp
+            Emoji island
+            Black Pink Rose
+            Monster drink
+          </p>
+        </div>
+
+        <div class="col">
+          <p>
+            Developer Jung Seung Won
+            Professor Yoon Jaeyoung
+            Hollys Coffee
+            Aquarius Rhapsody
+            RÉCORD
+            Slyrose_bp
+            Emoji island
+            Black Pink Rose
+            Monster drink
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+
+
   </div>
   </div>
   <script>
@@ -515,6 +617,7 @@
     const s7 = [];
     const s9Images = [];
     const s12Images = [];
+    const s13Images = [];
 
     for (let i = 0; i <= 580; i++) {
       appleSequenceImages.push(`s5_${`${i}`.slice(-6)}.png`);
@@ -529,8 +632,13 @@
       s9Images.push(`s9_${`${i}`.slice(-6)}.png`);
     }
 
-    for (let i = 0; i <= 540; i++) {
+    for (let i = 1; i <= 540; i++) {
       s12Images.push(`s12_intro_${`${i}`.slice(-6)}.png`);
+    }
+
+
+    for (let i = 0; i <= 2361; i++) {
+      s13Images.push(`s13,14_${`${i}`.slice(-15)}.png`);
     }
 
 
@@ -881,7 +989,7 @@
       container: '.s9-sequence',
       scrollWith: '.s9-container',
       images: s9Images,
-      imagesRoot: 'images/s10/s9_png/',
+      imagesRoot: 'images/s9/',
       priorityFrames: [0, 20, 40, 60, 90],
       cover: true,
       starts: 'out',
@@ -898,6 +1006,18 @@
       starts: 'out',
       ends: 'in'
     });
+
+    const s13Sequence = new ScrollSequence({
+      container: '.s13-sequence',
+      scrollWith: '.s13-container',
+      images: s13Images,
+      imagesRoot: 'images/s13,14/',
+      priorityFrames: [0, 20, 40, 60, 90],
+      cover: true,
+      starts: 'out',
+      ends: 'in'
+    });
+
     // END SCROLL_SEQUENCE CODE
 
     // ScrollOut({
