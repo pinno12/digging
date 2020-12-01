@@ -8,7 +8,7 @@
   <meta name="author" content="김세현, 낭은영, 설경민, 정승원, 디깅">
   <meta name="generator" content="Jekyll v4.1.1">
   <meta property="og:title" content="원하는 정보를 내손안에, DIGGING">
-  <meta property="og:description" content="UX UI 팀 디깅">
+  <!-- <meta property="og:description" content="UX UI 팀 디깅"> -->
   <meta property="og:image" content="/images/s2/S2.png">
   <title>DIGGING</title>
 
@@ -269,12 +269,12 @@
     }
 
     .horizontal-scroll-wrapper {
- 
+
       display: block;
- 
+
       /* width: 2000px; */
       /* height: 100vw; */
-      max-height:100vw;
+      max-height: 100vw;
       margin: 0;
       overflow-y: auto;
       overflow-x: hidden;
@@ -283,32 +283,28 @@
     }
 
     .horizontal-scroll-wrapper>img {
-      height:50%;
+      height: 50%;
       transform: rotate(90deg);
-     
     }
 
-   
     #s3-back {
       background-image: url("images/s2/S2.png");
       background-repeat: no-repeat;
-    background-size: 100% 100%;
+      background-size: 100% 100%;
     }
+
+  
   </style>
   <!-- Custom styles for this template -->
 </head>
 
 <body class="d-flex flex-column h-100">
-
   <div class="container-fluid">
-
     <div class="row" data-aos="zoom-out" id="s1" style="background-color:#E80000; height:110vh">
-
       <div class="col-4" style=" margin-left: 2%;  margin-top: 4%;">
-        <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img
+        <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img loading="lazy"
               src="images/s1/emoji.png"></span> </h1>
         <div style="margin-top:80%">
-
           <a onclick="bg_change($(this).attr('id'))" class="ui circular label s1_clicked" id="red"
             style="background-color: #E80000;"></a>
           <a onclick="bg_change($(this).attr('id'))" id="orange" class="ui circular label"
@@ -333,14 +329,14 @@
         <div class="flip-card" style="cursor: pointer;">
           <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-front">
-              <img class="d-card" id="s1_card" src="images/s1/red/red_card_back.png" alt="digging card"
+              <img loading="lazy" class="d-card" id="s1_card" src="images/s1/red/red_card_back.png" alt="digging card"
                 style="width:100%">
             </div>
             <div class="flip-card-back">
-              <img class="d-card" id="s1_card_front" src="images/s1/red/red_card_front.png" alt="digging contents"
+              <img loading="lazy" class="d-card" id="s1_card_front" src="images/s1/red/red_card_front.png" alt="digging contents"
                 style="width:100%">
               <div class="overlay">
-                <img class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png" alt="digging caption"
+                <img loading="lazy" class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png" alt="digging caption"
                   style="width:100%">
               </div>
             </div>
@@ -351,139 +347,109 @@
           STYLE/BEAUTY</p>
       </div>
       <div class="col" style="align-self: flex-end">
-        <img class="float-right mr-5 mb-5" src="images/s1/mouse.png" style="width:10%">
+        <img loading="lazy" class="float-right mr-5 mb-5" src="images/s1/mouse.png" style="width:10%">
       </div>
     </div>
-    <p id="s1_color" style="display:none;">
-    </p>
+    
     <div data-aos="zoom-in-up" class="row">
-      <img id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
-
+      <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
       <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
           class="s1_video d-none" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
-      <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay"
-        loop="loop" style="width:100%;"></video>
-
-
+      <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay" loop=""
+        style="width:100%;"></video>
       <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
         style="top:50%; opacity: 22%; font-weight: 700; font-size:13rem;">DIGGING</h1>
     </div>
-
     <div class="row" id="s3-back" class="s3_back">
 
+      <div class="item item--secondary" data-aos="slide-up" data-aos-anchor="#trigger-left">
+        <div class="col-3">
+          <p class="text-white">Dig out your favorite informations</p>
+          <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
+        </div>
+      </div>
+      <div class="item item--secondary" data-aos="fade-right" data-aos-anchor="#trigger-left">
+        <div class="offset-4 col-3" style="margin-top: 40%;">
+          <span class="text-white">and become a digging influencer!</span>
+          <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
+        </div>
+      </div>
 
-      <div class="col-3" data-aos="slide-up">
-        <p class="text-white">Dig out your favorite informations</p>
-        <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
-      </div>
-     
-      <div data-aos="zoom-in" class="offset-4 col-3" style="margin-top: 40%;">
-        <span class="text-white">and become a digging influencer!</span>
-        <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
-      </div>
+      <div class="void" style="height:100%; Background-color:transparent;"></div>
+
+      <div style="Background-color:transparent;" id="trigger-left"></div>
+      <div class="void" style="height:30%; Background-color:transparent;"></div>
+      <div style="Background-color:transparent;" id="trigger-right"></div>
 
     </div>
-
-
-    <!-- <div class="row container-img" >
-      <img src="images/s3/S3-gradient-background.png" data-aos="zoom-in" class="image" style="width:110%;">
-
-      <div class="overlay" style="text-align:center;">
-
-          <div class="col-3">
-            <p class="text-white" data-aos="slide-up">Dig out your favorite informations</p>
-            <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
-          </div>
-          <div class="col" style="margin-top: 14%;">
-            <img src="images/s2/S2.png" width="56%" data-aos="zoom-in" >
-          </div>
-
-          <div data-aos="zoom-in" class="col-3" style="margin-top: 40%;">
-            <span class="text-white">and become a digging influencer!</span>
-            <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
-          </div>
-     
-      </div>
-    </div> -->
 
 
     <div class="row" data-aos="zoom-in">
-
-      <video autoplay muted loop width="100%">
-        <!-- <video autoplay muted loop width = "100%"> -->
+      <video autoplay muted loop width="100%">  
         <source src="images/s3/S3.mp4" type="video/mp4">
       </video>
-
     </div>
-    <!-- </div> -->
-    <div class="row">
-
-    </div>
-
-
-
 
     <div class="row">
       <div class="horizontal-scroll-wrapper squares">
-        <img src = "images/s4/s4_1.png">
-        <img src = "images/s4/s4_2.png">
-        <img src = "images/s4/s4_3.png">
-        <img src = "images/s4/s4_4.png">
+        <img loading="lazy" src="images/s4/s4_1.png">
+        <img loading="lazy" src="images/s4/s4_2.png">
+        <img loading="lazy" src="images/s4/s4_3.png">
+        <img loading="lazy" src="images/s4/s4_4.png">
       </div>
     </div>
 
-
-      <section class="scroll-sequence__container apple-container">
-        <div class="scroll-sequence apple-sequence"></div>
-        <div class="scroll-sequence__content">
-          <div class="speak">
-            <h1>Any information you dig</h1>
-            <p>내가 디깅하는 수많은 정보들은</p>
-          </div>
-          <div class="speak">
-            <h1>This is Apple's image sequence</h1>
-            <p>All copyrights to them. Please don't sue me!</p>
-          </div>
-          <div class="speak">
-            <h1>The Text Animation</h1>
-            <p>Is created with Scroll-out.js. Go check it out!</p>
-          </div>
+    <section class="scroll-sequence__container apple-container">
+      <div class="scroll-sequence apple-sequence"></div>
+      <div class="scroll-sequence__content">
+        <div class="speak">
+          <h1>Any information you dig</h1>
+          <p>내가 디깅하는 수많은 정보들은</p>
         </div>
-      </section>
-
-      <div class="row" data-aos="zoom-in">
-        <img data-aos="slide-up" src="images/s6/s6_rose_card.png" width="100%">
-        <video autoplay muted loop id="myVideo" width="100%">
-          <source src="images/s6/rose_player.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <section class="scroll-sequence__container s7-container">
-        <div class="scroll-sequence s7-sequence"></div>
-        <div class="scroll-sequence__content">
-          <div class="speak">
-            <h1>This took me a while</h1>
-            <p>To get right, but here it is!</p>
-          </div>
-          <div class="speak">
-            <h1>Apple's images load faster</h1>
-            <p>Compression favors less details. So, shots of the forest was not the best idea :P</p>
-          </div>
-          <div class="speak">
-            <h1>Running out of things</h1>
-            <p>To say so imma head out.</p>
-          </div>
+        <div class="speak">
+          <h1>This is Apple's image sequence</h1>
+          <p>All copyrights to them. Please don't sue me!</p>
         </div>
-      </section>
-
-      <div class="row" class="s10">
-        <video autoplay muted loop width="100%">
-          <source src="images/s10/s9_video.mp4" type="video/mp4">
-        </video>
-
-    
+        <div class="speak">
+          <h1>The Text Animation</h1>
+          <p>Is created with Scroll-out.js. Go check it out!</p>
+        </div>
       </div>
-      <div class = "row" class = "s10">
+    </section>
+
+    <div class="row" data-aos="zoom-in">
+      <img loading="lazy" data-aos="slide-up" src="images/s6/s6_rose_card.png" width="100%">
+      <video autoplay muted loop id="myVideo" width="100%">
+        <source src="images/s6/rose_player.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <section class="scroll-sequence__container s7-container">
+      <div class="scroll-sequence s7-sequence"></div>
+      <div class="scroll-sequence__content">
+        <div class="speak">
+          <h1>This took me a while</h1>
+          <p>To get right, but here it is!</p>
+        </div>
+        <div class="speak">
+          <h1>Apple's images load faster</h1>
+          <p>Compression favors less details. So, shots of the forest was not the best idea :P</p>
+        </div>
+        <div class="speak">
+          <h1>Running out of things</h1>
+          <p>To say so imma head out.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="row" class="s10">
+      <video autoplay muted loop width="100%">
+        <source src="images/s10/s9_video.mp4" type="video/mp4">
+      </video>
+
+
+    </div>
+    <div class="row" class="s10">
       <section class="scroll-sequence__container s9-container">
         <div class="scroll-sequence s9-sequence"></div>
         <div class="scroll-sequence__content">
@@ -497,57 +463,50 @@
           </div>
           <div class="speak">
             <h1></h1>
-            <p></p>           
+            <p></p>
           </div>
         </div>
       </section>
     </div>
 
-      <div class="row">
-        <video autoplay muted loop width="100%">
-          <source src="images/s11/s11.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="row">
-        <section class="scroll-sequence__container s12-container">
-          <div class="scroll-sequence s12-sequence"></div>
-          <div class="scroll-sequence__content">
-            <div class="speak">
-              <h1></h1>
-              <p></p>
-            </div>
-            <div class="speak">
-              <h1></h1>
-              <p></p>
-            </div>
-            <div class="speak">
-              <h1></h1>
-              <p></p>           
-            </div>
-          </div>
-            
-         
-        </section>
-        <video autoplay muted loop width="100%">
-          <source src="images/s12/S12_main.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop width="100%">
-          <source src="images/s12/S12_main2.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop width="100%">
-          <source src="images/s12/S12_main3.mp4" type="video/mp4">
-        </video>
-        <video autoplay muted loop width="100%">
-          <source src="images/s12/S12_win.mp4" type="video/mp4">
-        </video>
-      </div>
-
-
-
-
-
-
+    <div class="row">
+      <video autoplay muted loop width="100%">
+        <source src="images/s11/s11.mp4" type="video/mp4">
+      </video>
     </div>
+    <div class="row">
+      <section class="scroll-sequence__container s12-container">
+        <div class="scroll-sequence s12-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+        </div>
+
+      </section>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_main.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_main2.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_main3.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_win.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
   </div>
   <script>
 
@@ -556,12 +515,12 @@
     const s7 = [];
     const s9Images = [];
     const s12Images = [];
-  
+
     for (let i = 0; i <= 580; i++) {
       appleSequenceImages.push(`s5_${`${i}`.slice(-6)}.png`);
       // s7.push(`${`${i}`.slice(-3)}.png`);
     }
-      
+
     for (let i = 0; i <= 42; i++) {
       s7.push(`s7_${`${i}`.slice(-6)}.png`);
     }
@@ -687,13 +646,6 @@
         this.renderIndex(this.displayIndex);
       }
 
-      /**
-     * By Ken Fyrstenberg Nilsen
-     *
-     * drawImageProp(context, image [, x, y, width, height [,offsetX, offsetY]])
-     *
-     * If image and context are only arguments rectangle will equal canvas
-    */
       drawImageCover(ctx, img, x, y, w, h, offsetX, offsetY) {
 
         if (arguments.length === 2) {
@@ -964,10 +916,6 @@
       duration: 1200,
     })
 
-    // AOS.init();
-
-
-
     function bg_change(color) {
 
       $(".ui.circular.label").removeClass("s1_clicked");
@@ -980,9 +928,7 @@
 
 
       document.getElementById("s1").style.backgroundColor = document.getElementById(color).style.backgroundColor;
-      // $("s3-back").removeClass("d-none");
       if (color == "mint" || color == "pink" || color == "sky" || color == "purple") {
-        $(".s1_video").removeClass("d-none");
         $(".s1_image").addClass("d-none");
         if (color == "purple") {
           $(".s1_audio").removeClass("d-none");
@@ -990,10 +936,9 @@
         } else {
           document.getElementById("s1_video").src = "images/s1/" + color + "/" + color + "_video.mp4";
           $(".s1_audio").addClass("d-none");
+          $(".s1_video").removeClass("d-none");
         }
-
       } else {
-
         $(".s1_image").removeClass("d-none");
         $(".s1_video").addClass("d-none");
         document.getElementById("s1_image").src = "images/s1/" + color + "/" + color + "_image.png";
@@ -1027,7 +972,7 @@
           document.getElementById("s1_text").textContent = "ENTERTAINMENT";
 
           break;
-        case 'pink':    
+        case 'pink':
           document.getElementById("s1_text").textContent = "PEOPLE";
 
           break;
