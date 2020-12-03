@@ -1,0 +1,76 @@
+    <div id="s15-back" class="row" style="
+    bottom: 6rem;
+    margin: 0 -15px 0 -15px;
+">
+      <div class="">
+        <div class="col-4 float-right text-right" style="top: 8rem;margin-right: 12rem;">
+          <h1 class="display-5 text-white">A lot of people’s information gathered together</h1>
+          <h3 class="text-white" style="
+    opacity: 60%;
+">한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
+        </div>
+        <img src="images/s15/s15_card.png" width="100%">
+        <div class="col align-self-center text-center">
+          <h1 class="display-1 text-white" style="
+    font-size: 16rem;
+    font-weight: bolder;
+">DIGGING</h1>
+          <h1 class="text-white" style="
+    font-weight: 300;
+    opacity: 70%;
+">Start digging NOW!</h1>
+        </div>
+      </div>
+
+      <div class="row justify-content-between">
+        <div class="col">
+          <img src="images/s15/s15_name1.png" width="100%">
+        </div>
+        <div class="col">
+          <img src="images/s15/s15_name2.png" width="100%">
+        </div>
+        <div class="col">
+          <img src="images/s15/s15_name3.png" width="100%">
+        </div>
+      </div>
+
+      <div class="row justify-content-center col-12 py-5 text-white" style="padding-bottom: 6rem;background-color: #364deb;margin-left: 10%;opacity: 70%;">
+
+        <div class="col">
+          <p style="
+    line-height: 3rem;
+">
+            Developer Jung Seung Won <br>
+Aquarius Rhapsody<br>
+Slyrose_bp<br>
+
+          </p>
+        </div>
+
+        <div class="col">
+          <p style="
+    line-height: 3rem;
+">
+            Professor Yoon Jaeyoung <br>
+RÉCORD <br>
+Emoji island <br>
+
+          </p>
+        </div>
+
+        <div class="col" style="
+    /* line-height: 3rem; */
+">
+          <p style="
+    line-height: 3rem;
+">
+                 
+Hollys Coffee <br>
+Black Pink Rose  <br>
+Monster drink  <br>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
