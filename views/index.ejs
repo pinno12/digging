@@ -9,7 +9,7 @@
   <meta name="generator" content="Jekyll v4.1.1">
   <meta property="og:title" content="원하는 정보를 내손안에, DIGGING">
   <meta property="og:description" content="digging platform uxui design">
-  <meta property="og:image" content="/images/s2/S2.png">
+  <meta property="og:image" content="/images/thumbnail.png">
   <title>DIGGING</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -50,6 +50,7 @@
 
     body {
       background-color: black;
+      overflow-y: scroll;
     }
 
     .s1_clicked {
@@ -274,7 +275,7 @@
 
     .horizontal-scroll-wrapper>img {
       height: 100%;
-      padding: 22.27%;
+      padding: 21.86vw;
 
       transform: rotate(90deg);
     }
@@ -295,14 +296,14 @@
   <!-- Custom styles for this template -->
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 inner">
   <div class="container-fluid">
-    <div class="row" data-aos="zoom-out" id="s1" style="background-color:#E80000; height:110vh">
+    <div class="row" data-aos="zoom-out" id="s1" style="background-color:#FF0080;; height:110vh">
       <div class="col-4" style=" margin-left: 2%;  margin-top: 4%;">
-        <h1 class="text-white" id="s1_title" style='font-size: 3rem; opacity:70%;'>LET’S START DIGGING‍<span><img
-              loading="lazy" src="images/s1/emoji.png"></span> </h1>
+        <h1 class="text-white" id="s1_title" style='font-size: 6rem; opacity:70%;'>LET’S START DIGGING‍<span><img
+              loading="lazy" src="images/s1/emoji.png" style = "width:6rem;"></span> </h1>
         <div style="margin-top:80%">
-          <a onclick="bg_change($(this).attr('id'))" class="ui circular label s1_clicked" id="red"
+          <a onclick="bg_change($(this).attr('id'))" class="ui circular label " id="red"
             style="background-color: #E80000;"></a>
           <a onclick="bg_change($(this).attr('id'))" id="orange" class="ui circular label"
             style="background-color: #F27809;"></a>
@@ -318,7 +319,7 @@
             style="background-color: #364DEB;"></a>
           <a onclick="bg_change($(this).attr('id'))" id="purple" class="ui circular label"
             style="background-color: #7119F2;"></a>
-          <a onclick="bg_change($(this).attr('id'))" id="pink" class="ui circular label"
+          <a onclick="bg_change($(this).attr('id'))" id="pink" class="ui circular label s1_clicked"
             style="background-color: #FF0080;"></a>
         </div>
       </div>
@@ -326,14 +327,14 @@
         <div class="flip-card" style="cursor: pointer;">
           <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-front">
-              <img loading="lazy" class="d-card" id="s1_card" src="images/s1/red/red_card_back.png" alt="digging card"
+              <img loading="lazy" class="d-card" id="s1_card" src="images/s1/pink/pink_card_back.png" alt="digging card"
                 style="width:100%">
             </div>
             <div class="flip-card-back">
-              <img loading="lazy" class="d-card" id="s1_card_front" src="images/s1/red/red_card_front.png"
+              <img loading="lazy" class="d-card" id="s1_card_front" src="images/s1/pink/pink_card_front.png"
                 alt="digging contents" style="width:100%">
               <div class="overlay">
-                <img loading="lazy" class="d-card" id="s1_card_caption" src="images/s1/red/red_caption.png"
+                <img loading="lazy" class="d-card" id="s1_card_caption" src="images/s1/pink/pink_caption.png"
                   alt="digging caption" style="width:100%">
               </div>
             </div>
@@ -341,11 +342,13 @@
         </div>
         <p id="s1_text" class="text-white"
           style="margin-top:-25%; text-align: center;font-size: 1.5rem;width: 59%;transform: rotate(-60deg);padding-left: 71%;">
-          STYLE/BEAUTY</p>
+          PEOPLE</p>
       </div>
       <div class="col" style="align-self: flex-end">
         <img loading="lazy" class="float-right mr-5 mb-5" src="images/s1/mouse.png" style="width:10%">
       </div>
+      <p id="s1_color" style="display:none;">
+      </p>
     </div>
 
     <div data-aos="zoom-in-up" class="row">
@@ -357,23 +360,27 @@
       <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
         style="top:50%; opacity: 22%; font-weight: 700; font-size:13rem;">DIGGING</h1>
     </div>
+    
     <div class="row" id="s3-back" class="s3_back">
-      <div class="item item--secondary" data-aos="slide-up" data-aos-anchor="#trigger-left">
-        <div class="col-3">
-          <p class="text-white">Dig out your favorite informations</p>
-          <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
-        </div>
-      </div>
-      <div class="item item--secondary" data-aos="fade-right" data-aos-anchor="#trigger-left">
+
+    
+
+            <div class="col-3">
+              <p class="text-white">Dig out your favorite informations</p>
+              <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
+            </div>
+      
+
         <div class="offset-4 col-3" style="margin-top: 40%;">
           <span class="text-white">and become a digging influencer!</span>
           <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
         </div>
-      </div>
-      <div class="void" style="height:100%; Background-color:transparent;"></div>
-      <div style="Background-color:transparent;" id="trigger-left"></div>
-      <div class="void" style="height:30%; Background-color:transparent;"></div>
-      <div style="Background-color:transparent;" id="trigger-right"></div>
+
+      
+      
+  
+    
+   
     </div>
 
 
@@ -384,7 +391,7 @@
     </div>
 
     <div class="row">
-      <div class="horizontal-scroll-wrapper" style="margin-top: -39%; background-color: white;">
+      <div class="horizontal-scroll-wrapper" style=" background-color: white;">
         <img loading="lazy" src="images/s4/s4_1.png">
         <img loading="lazy" src="images/s4/s4_2.png">
         <img loading="lazy" src="images/s4/s4_3.png">
@@ -412,7 +419,7 @@
     </section>
 
     <div class="row" data-aos="zoom-in">
-      <img loading="lazy" data-aos="slide-up" src="images/s6/s6_rose_card.png" width="100%">
+      <!-- <img loading="lazy" data-aos="slide-up" src="images/s6/s6_rose_card.png" width="100%"> -->
       <video autoplay muted loop id="myVideo" width="100%">
         <source src="images/s6/rose_player.mp4" type="video/mp4">
       </video>
@@ -529,21 +536,37 @@
             <h1></h1>
             <p></p>
           </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
         </div>
-
       </section>
     </div>
 
-    <div id="s15-back" class="row">
-      <div class="row">
-        <div class="col align-self-end">
-          <h1 class="display-5">A lot of people’s information gathered together</h1>
-          <h3>한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
+
+    <div id="s15-back" class="" style="bottom: 6rem; margin: 0 -15px 0 -15px; ">
+      <div class="">
+        <div class="col-4 float-right text-right" style="top: 8rem;margin-right: 12rem;">
+          <h1 class="display-5 text-white">A lot of people’s information gathered together</h1>
+          <h3 class="text-white" style="opacity: 60%;">한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
         </div>
         <img src="images/s15/s15_card.png" width="100%">
-        <div class="col align-self-center">
-          <h1 class="display-5">DIGGING</h1>
-          <p>Start digging NOW!</p>
+        <div class="col align-self-center text-center">
+          <h1 class="display-1 text-white" style="font-size: 16rem;font-weight: bolder;">DIGGING</h1>
+          <h1 class="text-white" style="font-weight: 300;opacity: 70%;">Start digging NOW!</h1>
         </div>
       </div>
 
@@ -558,52 +581,39 @@
           <img src="images/s15/s15_name3.png" width="100%">
         </div>
       </div>
+<div class ="row justify-content-md-center">
+  <p class = "col text-center text-white">
+    Thanks to
+  </p>
+</div>
 
-      <div class="row justify-content-between">
+      <div class="row justify-content-center col-12 py-5 text-white" style="padding-bottom: 6rem;margin-left: 10%;opacity: 70%;">
+
 
         <div class="col">
-          <p>
-            Developer Jung Seung Won
-            Professor Yoon Jaeyoung
-            Hollys Coffee
-            Aquarius Rhapsody
-            RÉCORD
-            Slyrose_bp
-            Emoji island
-            Black Pink Rose
-            Monster drink
+          <p style="line-height: 3rem;">
+            Developer Jung Seung Won <br>
+Aquarius Rhapsody<br>
+Slyrose_bp<br>
           </p>
         </div>
 
         <div class="col">
-          <p>
-            Developer Jung Seung Won
-            Professor Yoon Jaeyoung
-            Hollys Coffee
-            Aquarius Rhapsody
-            RÉCORD
-            Slyrose_bp
-            Emoji island
-            Black Pink Rose
-            Monster drink
+          <p style="line-height: 3rem;">
+            Professor Yoon Jaeyoung <br>
+RÉCORD <br>
+Emoji island <br>
           </p>
         </div>
 
         <div class="col">
-          <p>
-            Developer Jung Seung Won
-            Professor Yoon Jaeyoung
-            Hollys Coffee
-            Aquarius Rhapsody
-            RÉCORD
-            Slyrose_bp
-            Emoji island
-            Black Pink Rose
-            Monster drink
+          <p style="line-height: 3rem;">
+                 
+Hollys Coffee <br>
+Black Pink Rose  <br>
+Monster drink  <br>
           </p>
         </div>
-
-
       </div>
     </div>
 
@@ -612,12 +622,19 @@
   </div>
   <script>
 
+  
 
     const appleSequenceImages = [];
+    // const s2Images = [];
     const s7 = [];
     const s9Images = [];
     const s12Images = [];
     const s13Images = [];
+
+    // for (let i = 0; i <= 2; i++) {
+    //   s2Images.push(`S2_${`${i}`.slice(-6)}.png`);      
+    // }
+
 
     for (let i = 0; i <= 580; i++) {
       appleSequenceImages.push(`s5_${`${i}`.slice(-6)}.png`);
@@ -638,11 +655,11 @@
 
 
     for (let i = 0; i <= 2361; i++) {
-      s13Images.push(`s13,14_${`${i}`.slice(-15)}.png`);
+      s13Images.push(`${`${i}`.slice(-3)}.png`);
     }
+  
 
-
-    // console.log(appleSequenceImages);
+    console.log(s13Images);
 
     const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
@@ -962,6 +979,16 @@
         return value > 100 ? 100 : value < 0 ? 0 : value;
       }
     }
+    // const s2Sequence = new ScrollSequence({
+    //   container: '.s2-sequence',
+    //   scrollWith: '.s2-container',
+    //   images: s2Images,
+    //   imagesRoot: 'images/s2/',
+    //   priorityFrames: [0, 20, 40, 60, 90],
+    //   cover: true,
+    //   playUntil: 'scroll-out',
+    //   starts: 'in'
+    // });
 
     const appleSequence = new ScrollSequence({
       container: '.apple-sequence',
@@ -981,7 +1008,7 @@
       imagesRoot: 'images/s7/',
       priorityFrames: [0, 20, 40, 60, 90],
       cover: true,
-      starts: 'out',
+      starts: 'scroll-out',
       ends: 'in'
     });
 
@@ -992,7 +1019,7 @@
       imagesRoot: 'images/s9/',
       priorityFrames: [0, 20, 40, 60, 90],
       cover: true,
-      starts: 'out',
+      starts: 'scroll-out',
       ends: 'in'
     });
 
@@ -1001,9 +1028,10 @@
       scrollWith: '.s12-container',
       images: s12Images,
       imagesRoot: 'images/s12/s12_intro/',
+      
       priorityFrames: [0, 20, 40, 60, 90],
       cover: true,
-      starts: 'out',
+      starts: 'scroll-out',
       ends: 'in'
     });
 
@@ -1011,10 +1039,10 @@
       container: '.s13-sequence',
       scrollWith: '.s13-container',
       images: s13Images,
-      imagesRoot: 'images/s13,14/',
-      priorityFrames: [0, 20, 40, 60, 90],
+      imagesRoot: 'images/s13_14/',
+      priorityFrames: [0, 20, 40, 60, 90,110,130,150,1000,2000],
       cover: true,
-      starts: 'out',
+      starts: 'scroll-out',
       ends: 'in'
     });
 
