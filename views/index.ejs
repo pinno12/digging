@@ -51,6 +51,7 @@
     body {
       background-color: black;
       overflow-y: scroll;
+      color: white;
     }
 
     .s1_clicked {
@@ -280,11 +281,18 @@
       transform: rotate(90deg);
     }
 
-    #s3-back {
+    #s2-back {
       background-image: url("images/s2/S2.png");
       background-repeat: no-repeat;
       background-size: 100% 100%;
     }
+
+    .s3 {
+      background-image: url("images/s3/S3-gradient-background.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
 
 
     #s15-back {
@@ -292,17 +300,30 @@
       background-repeat: no-repeat;
       background-size: 100% 100%;
     }
+
+    .video-content {
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .text-light {
+      opacity: 70%;
+    }
   </style>
   <!-- Custom styles for this template -->
 </head>
 
 <body class="d-flex flex-column h-100 inner">
   <div class="container-fluid">
-    <div class="row" data-aos="zoom-out" id="s1" style="background-color:#FF0080;; height:110vh">
-      <div class="col-4" style=" margin-left: 2%;  margin-top: 4%;">
+    <div class="row" data-aos="zoom-out" id="s1" style="background-color:#FF0080;; height:110vh" class="s1">
+      <div class="col-4" style=" margin-left: 4%;  margin-top: 4%;">
         <h1 class="text-white" id="s1_title" style='font-size: 6rem; opacity:70%;'>LET’S START DIGGING‍<span><img
-              loading="lazy" src="images/s1/emoji.png" style = "width:6rem;"></span> </h1>
-        <div style="margin-top:80%">
+              loading="lazy" src="images/s1/emoji.png" style="width:6rem;"></span> </h1>
+        <div style="margin-top:43%">
           <a onclick="bg_change($(this).attr('id'))" class="ui circular label " id="red"
             style="background-color: #E80000;"></a>
           <a onclick="bg_change($(this).attr('id'))" id="orange" class="ui circular label"
@@ -354,33 +375,25 @@
     <div data-aos="zoom-in-up" class="row">
       <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
       <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
-          class="s1_video d-none" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
+          class="s1_video" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
       <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay" loop=""
         style="width:100%;"></video>
+
       <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
         style="top:50%; opacity: 22%; font-weight: 700; font-size:13rem;">DIGGING</h1>
     </div>
-    
-    <div class="row" id="s3-back" class="s3_back">
 
-    
-
-            <div class="col-3">
-              <p class="text-white">Dig out your favorite informations</p>
-              <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
-            </div>
-      
-
-        <div class="offset-4 col-3" style="margin-top: 40%;">
-          <span class="text-white">and become a digging influencer!</span>
+    <div class="row" id="s2-back" class="s2-back">
+      <div class="col-3 ml-5" style="margin-top:12%" data-aos="fade-right">
+        <h1 class="text-white">Dig out your <br />favorite informations</h1>
+        <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
+      </div>
+      <div class="offset-5 col-3 text-right" style="margin-top: 100vh; margin-left: 45%; ">
+        <div style="position:absolute; bottom:14rem;" data-aos="fade-left">
+          <h1 class="text-white text-right">and become <br /> a digging influencer!</h1>
           <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
         </div>
-
-      
-      
-  
-    
-   
+      </div>
     </div>
 
 
@@ -388,6 +401,15 @@
       <video autoplay muted loop width="100%">
         <source src="images/s3/S3.mp4" type="video/mp4">
       </video>
+    </div>
+
+    <div class="row justify-content-center s3" style="height: 300vh;">
+      <div class="text-center" style="margin-top:30%; ">
+        <div data-aos="zoom-in-up">
+          <h1>What do you dig?</h1> <br />
+          <span class="kr-font text-white">당신은 주로 무엇을 디깅하시나요?</span>
+        </div>
+      </div>
     </div>
 
     <div class="row">
@@ -400,20 +422,26 @@
       </div>
     </div>
 
+    <div class="row" data-aos="fade-in">
+      <video autoplay muted loop width="100%">
+        <source src="images/s4/s4_horizontal scroll.mp4" type="video/mp4">
+      </video>
+    </div>
+
     <section class="scroll-sequence__container apple-container">
       <div class="scroll-sequence apple-sequence"></div>
       <div class="scroll-sequence__content">
         <div class="speak">
-          <h1>Any information you dig</h1>
-          <p>내가 디깅하는 수많은 정보들은</p>
+          <h1></h1>
+          <p></p>
         </div>
         <div class="speak">
-          <h1>This is Apple's image sequence</h1>
-          <p>All copyrights to them. Please don't sue me!</p>
+          <h1></h1>
+          <p></p>
         </div>
         <div class="speak">
-          <h1>The Text Animation</h1>
-          <p>Is created with Scroll-out.js. Go check it out!</p>
+          <h1></h1>
+          <p></p>
         </div>
       </div>
     </section>
@@ -423,6 +451,14 @@
       <video autoplay muted loop id="myVideo" width="100%">
         <source src="images/s6/rose_player.mp4" type="video/mp4">
       </video>
+      <div class="overlay" style="
+      font-weight: bold;
+      margin-left: 11%;
+      margin-top: 6%;
+  ">
+        <h1 class="display-4 font-weight-bold">Any information <br />you dig</h1>
+        <p>내가 디깅하는 수많은 정보들은</p>
+      </div>
     </div>
 
     <div class="row" data-aos="zoom-in" class="s7">
@@ -437,15 +473,15 @@
             <h1></h1>
             <p></p>
           </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
+          <div class="speak text-right mr-5">
+            <h1 class="display-3 font-weight-bold">can be saved as <br />a digging card</h1>
+            <p class="text-light" style="line-height: 6rem;">디깅 카드로 저장할 수 있어요 </p>
           </div>
         </div>
       </section>
     </div>
 
-    <div class="row" class="s8">
+    <div class="row" class="s8" data-aos="fade-in">
       <video autoplay muted loop width="100%">
         <source src="images/s8/s8_1.mp4" type="video/mp4">
       </video>
@@ -454,7 +490,7 @@
       </video>
     </div>
 
-    <div class="row" class="s9">
+    <div class="row" class="s9 overlay">
       <section class="scroll-sequence__container s9-container">
         <div class="scroll-sequence s9-sequence"></div>
         <div class="scroll-sequence__content">
@@ -480,150 +516,172 @@
       </video>
     </div>
 
+    <div class="row pl-5" class="s11" style="background: #FF0880; height: 110vh;">
+
+      <h1 class=" font-weight-bold mt-5 pl-5" style="font-size:10rem; opacity: 80%;">
+        LET’S <span> <img src="images/s11/s11_1_png_finger.png" style="margin-left:-2%; width:19rem;"></span><br />
+        EXPLORE OTHER <br />
+        DIGGING TAGS <br />
+      </h1>
+      <div class="text-right">
+        <span class="text-uppercase"
+          style="font-size: 2rem;position: absolute;padding-top: 31%;right: 5%; opacity:58%;">you want</span>
+      </div>
+      <div class="col text-right pb-5" style="
+      bottom: 7%;
+      right: 1%;
+  ">
+        <img src="images/s11/s11_1_png_eyes.png" class="" style="width:16rem;">
+      </div>
+    </div>
     <div class="row" class="s11">
       <video autoplay muted loop width="100%">
         <source src="images/s11/s11.mp4" type="video/mp4">
       </video>
     </div>
+  </div>
 
 
-    <div class="row">
-      <section class="scroll-sequence__container s12-container">
-        <div class="scroll-sequence s12-sequence"></div>
-        <div class="scroll-sequence__content">
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
+  <div class="row">
+    <section class="scroll-sequence__container s12-container">
+      <div class="scroll-sequence s12-sequence"></div>
+      <div class="scroll-sequence__content">
+        <div class="speak">
+          <h1></h1>
+          <p></p>
         </div>
-
-      </section>
-      <video autoplay muted loop width="100%">
-        <source src="images/s12/S12_main.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop width="100%">
-        <source src="images/s12/S12_main2.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop width="100%">
-        <source src="images/s12/S12_main3.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop width="100%">
-        <source src="images/s12/S12_win.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div class="row" class="s13_14">
-      <section class="scroll-sequence__container s13-container">
-        <div class="scroll-sequence s13-sequence"></div>
-        <div class="scroll-sequence__content">
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
-          <div class="speak">
-            <h1></h1>
-            <p></p>
-          </div>
+        <div class="speak">
+          <h1></h1>
+          <p></p>
         </div>
-      </section>
-    </div>
-
-
-    <div id="s15-back" class="" style="bottom: 6rem; margin: 0 -15px 0 -15px; ">
-      <div class="">
-        <div class="col-4 float-right text-right" style="top: 8rem;margin-right: 12rem;">
-          <h1 class="display-5 text-white">A lot of people’s information gathered together</h1>
-          <h3 class="text-white" style="opacity: 60%;">한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
-        </div>
-        <img src="images/s15/s15_card.png" width="100%">
-        <div class="col align-self-center text-center">
-          <h1 class="display-1 text-white" style="font-size: 16rem;font-weight: bolder;">DIGGING</h1>
-          <h1 class="text-white" style="font-weight: 300;opacity: 70%;">Start digging NOW!</h1>
+        <div class="speak">
+          <h1></h1>
+          <p></p>
         </div>
       </div>
 
-      <div class="row justify-content-between">
-        <div class="col">
-          <img src="images/s15/s15_name1.png" width="100%">
+    </section>
+    <video autoplay muted loop width="100%">
+      <source src="images/s12/S12_main.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop width="100%">
+      <source src="images/s12/S12_main2.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop width="100%">
+      <source src="images/s12/S12_main3.mp4" type="video/mp4">
+    </video>
+    <video autoplay muted loop width="100%">
+      <source src="images/s12/S12_win.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="row" class="s13_14">
+    <section class="scroll-sequence__container s13-container">
+      <div class="scroll-sequence s13-sequence"></div>
+      <div class="scroll-sequence__content">
+        <div class="speak">
+          <h1></h1>
+          <p></p>
         </div>
-        <div class="col">
-          <img src="images/s15/s15_name2.png" width="100%">
+        <div class="speak">
+          <h1></h1>
+          <p></p>
         </div>
-        <div class="col">
-          <img src="images/s15/s15_name3.png" width="100%">
+        <div class="speak">
+          <h1></h1>
+          <p></p>
+        </div>
+        <div class="speak">
+          <h1></h1>
+          <p></p>
+        </div>
+        <div class="speak">
+          <h1></h1>
+          <p></p>
+        </div>
+        <div class="speak">
+          <h1>Titles that <br/>            
+            show you the best</h1>
+          <p>당신을 가장 잘 보여주는 디깅 칭호들</p>
+        </div>
+        <div class="speak text-right mr-5">
+          <h1 class="display-3 font-weight-bold">Route you’ve searched <br />
+            represents you, too</h1>
+            <p class="text-light" style="line-height: 6rem;">찾아본 디깅 루트도, 당신을 드러내는 방법이에요</p>
         </div>
       </div>
-<div class ="row justify-content-md-center">
-  <p class = "col text-center text-white">
-    Thanks to
-  </p>
-</div>
-
-      <div class="row justify-content-center col-12 py-5 text-white" style="padding-bottom: 6rem;margin-left: 10%;opacity: 70%;">
+    </section>
+  </div>
 
 
-        <div class="col">
-          <p style="line-height: 3rem;">
-            Developer Jung Seung Won <br>
-Aquarius Rhapsody<br>
-Slyrose_bp<br>
-          </p>
-        </div>
-
-        <div class="col">
-          <p style="line-height: 3rem;">
-            Professor Yoon Jaeyoung <br>
-RÉCORD <br>
-Emoji island <br>
-          </p>
-        </div>
-
-        <div class="col">
-          <p style="line-height: 3rem;">
-                 
-Hollys Coffee <br>
-Black Pink Rose  <br>
-Monster drink  <br>
-          </p>
-        </div>
+  <div id="s15-back" class="" style="bottom: 6rem; margin: 0 -15px 0 -15px; ">
+    <div class="">
+      <div class="col-4 float-right text-right" style="top: 8rem;margin-right: 12rem;">
+        <h1 class="display-5 text-white">A lot of people’s information gathered together</h1>
+        <h3 class="text-white" style="opacity: 60%;">한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
+      </div>
+      <img src="images/s15/s15_card.png" width="100%">
+      <div class="col align-self-center text-center">
+        <h1 class="display-1 text-white" style="font-size: 16rem;font-weight: bolder;">DIGGING</h1>
+        <h1 class="text-white" style="font-weight: 300;opacity: 70%;">Start digging NOW!</h1>
       </div>
     </div>
 
+    <div class="row justify-content-between">
+      <div class="col">
+        <img src="images/s15/s15_name1.png" width="100%">
+      </div>
+      <div class="col">
+        <img src="images/s15/s15_name2.png" width="100%">
+      </div>
+      <div class="col">
+        <img src="images/s15/s15_name3.png" width="100%">
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <p class="col text-center text-white">
+        Thanks to
+      </p>
+    </div>
 
+    <div class="row justify-content-center col-12 py-5 text-white"
+      style="padding-bottom: 6rem;margin-left: 10%;opacity: 70%;">
+
+
+      <div class="col">
+        <p style="line-height: 3rem;">
+          Developer Jung Seung Won <br>
+          Aquarius Rhapsody<br>
+          Slyrose_bp<br>
+        </p>
+      </div>
+
+      <div class="col">
+        <p style="line-height: 3rem;">
+          Professor Yoon Jaeyoung <br>
+          RÉCORD <br>
+          Emoji island <br>
+        </p>
+      </div>
+
+      <div class="col">
+        <p style="line-height: 3rem;">
+
+          Hollys Coffee <br>
+          Black Pink Rose <br>
+          Monster drink <br>
+        </p>
+      </div>
+    </div>
+ 
+    <footer class="">
+     <a href = "http://hivcdgw2020.com/themediumspace"><img src = "images/footer.png" width = "100%"></a> 
+    
+    </footer>
+  </div>
   </div>
   </div>
   <script>
-
-  
-
     const appleSequenceImages = [];
     // const s2Images = [];
     const s7 = [];
@@ -655,9 +713,9 @@ Monster drink  <br>
 
 
     for (let i = 0; i <= 2361; i++) {
-      s13Images.push(`${`${i}`.slice(-3)}.png`);
+      s13Images.push(`s13,14_${`${i}`.slice(-10)}.png`);
     }
-  
+
 
     console.log(s13Images);
 
@@ -1028,7 +1086,7 @@ Monster drink  <br>
       scrollWith: '.s12-container',
       images: s12Images,
       imagesRoot: 'images/s12/s12_intro/',
-      
+
       priorityFrames: [0, 20, 40, 60, 90],
       cover: true,
       starts: 'scroll-out',
@@ -1039,8 +1097,8 @@ Monster drink  <br>
       container: '.s13-sequence',
       scrollWith: '.s13-container',
       images: s13Images,
-      imagesRoot: 'images/s13_14/',
-      priorityFrames: [0, 20, 40, 60, 90,110,130,150,1000,2000],
+      imagesRoot: 'images/s13,14/',
+      priorityFrames: [0, 20, 40, 60, 90],
       cover: true,
       starts: 'scroll-out',
       ends: 'in'
@@ -1048,13 +1106,6 @@ Monster drink  <br>
 
     // END SCROLL_SEQUENCE CODE
 
-    // ScrollOut({
-    //   targets: '.speak',
-    //   cssProps: {
-    //     viewportY: true,
-    //     visibleY: true
-    //   }
-    // });
 
 
 
@@ -1142,8 +1193,8 @@ Monster drink  <br>
       })
 
 
-      var rotationStr = "rotate(" + -0.5 * scroll + "deg)";
-      if (scroll <= 60) {
+      var rotationStr = "rotate(" + -0.8 * scroll + "deg)";
+      if (scroll <= 38) {
         $(".d-card").css({
           "-webkit-transform": rotationStr,
           "-moz-transform": rotationStr,
