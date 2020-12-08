@@ -44,6 +44,44 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <style>
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+
+    }
+
+    /* Modal Content */
+    .modal-content {
+
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+    }
+
+    /* The Close Button */
+
+
+    .close:hover,
+    .close:focus {
+
+      text-decoration: none;
+      cursor: pointer;
+    }
+
     .fade {
       opacity: 1;
     }
@@ -313,19 +351,28 @@
     .text-light {
       opacity: 70%;
     }
+
+    .ui.circular.label,
+    .ui.circular.labels .label {
+      min-width: 1vw;
+      min-height: 1vw;
+    }
   </style>
   <!-- Custom styles for this template -->
 </head>
 
 <body class="d-flex flex-column h-100 inner">
   <div class="container-fluid">
-    <div class="row" data-aos="zoom-out" id="s1" style="background-color:#FF0080;; height:110vh" class="s1">
-      <div class="col-4" style=" margin-left: 4%;  margin-top: 4%;">
-        <h1 class="text-white" id="s1_title" style='font-size: 6rem; opacity:70%;'>LET’S START DIGGING‍<span><img
+    <div class="row" id="s1" style="background-color:#FF0080;; height:100vh" class="s1">
+      <div class="col-4" style=" margin-left: 3.95%;  margin-top: 4%; line-height: 6.875rem;">
+        <p style="font-size:  1.25rem; opacity: 70%;">DIGGING Platform UXUI</p>
+        <h1 class="text-white" id="s1_title" style='font-size: 6.125rem; opacity:70%;'>LET’S START DIGGING‍<span><img
               loading="lazy" src="images/s1/emoji.png" style="width:6rem;"></span> </h1>
-        <div style="margin-top:43%">
+        <div class style="margin-top:5vw; margin-left:12vw;line-height: 2.5vw;">CLICK TO EXPLORE <br /> ▼</div>
+        <div style="bottom:4vw; position:absolute;">
+
           <a onclick="bg_change($(this).attr('id'))" class="ui circular label " id="red"
-            style="background-color: #E80000;"></a>
+            style="background-color: #E80000; max-width:1vw;"></a>
           <a onclick="bg_change($(this).attr('id'))" id="orange" class="ui circular label"
             style="background-color: #F27809;"></a>
           <a onclick="bg_change($(this).attr('id'))" id="yellow" class="ui circular label"
@@ -351,7 +398,7 @@
               <img loading="lazy" class="d-card" id="s1_card" src="images/s1/pink/pink_card_back.png" alt="digging card"
                 style="width:100%">
             </div>
-            <div class="flip-card-back">
+            <div class="flip-card-back" id="myBtn">
               <img loading="lazy" class="d-card" id="s1_card_front" src="images/s1/pink/pink_card_front.png"
                 alt="digging contents" style="width:100%">
               <div class="overlay">
@@ -362,53 +409,76 @@
           </div>
         </div>
         <p id="s1_text" class="text-white"
-          style="margin-top:-25%; text-align: center;font-size: 1.5rem;width: 59%;transform: rotate(-60deg);padding-left: 71%;">
+          style="margin-top:-22vw; width:120%; text-align: center;font-size: 2.18rem;transform: rotate(-60deg);">
           PEOPLE</p>
       </div>
       <div class="col" style="align-self: flex-end">
         <img loading="lazy" class="float-right mr-5 mb-5" src="images/s1/mouse.png" style="width:10%">
       </div>
+
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content close2">
+          <!-- <span class="close">&times;</span> -->
+          <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
+            style="top:15vw;  font-weight: 700; font-size:20.125rem;">DIGGING</h1>
+          <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png"
+            style="width:100%;">
+          <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
+              class="s1_video" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
+          <figure class="m-0 p-0" style="width:100%">
+            <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay"
+              loop="" style="width:100%;"></video>
+            <!-- <video src="images/s1/purple/purple_audio.mp4" id="s1_audio"
+            class="s1_audio d-none" autoplay="autoplay" loop="loop" style="width:100%;"></video>
+           -->
+
+          </figure>
+
+
+        </div>
+
+
+      </div>
+
       <p id="s1_color" style="display:none;">
       </p>
     </div>
 
-    <div data-aos="zoom-in-up" class="row">
-      <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
-      <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
-          class="s1_video" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
-      <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay" loop=""
-        style="width:100%;"></video>
 
-      <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
-        style="top:50%; opacity: 22%; font-weight: 700; font-size:13rem;">DIGGING</h1>
-    </div>
-
-    <div class="row" id="s2-back" class="s2-back">
-      <div class="col-3 ml-5" style="margin-top:12%" data-aos="fade-right">
-        <h1 class="text-white">Dig out your <br />favorite informations</h1>
-        <span class="text-white">유용한 정보를 발굴하고, 저장하며</span>
-      </div>
-      <div class="offset-5 col-3 text-right" style="margin-top: 100vh; margin-left: 45%; ">
-        <div style="position:absolute; bottom:14rem;" data-aos="fade-left">
-          <h1 class="text-white text-right">and become <br /> a digging influencer!</h1>
-          <span class="kr-font text-white">정보력 넘치는 디깅 인플루언서가 되어보세요!</span>
-        </div>
+    <div class="row justify-content-center text-center" id="s2" class="s2" style="position: relative;">
+      <img src="images/s2/S2.png" width="100%">
+      <div class="overlay" style="top:36vw;">
+        <h1 class="display-2 " style="font-size:6.44rem; font-weight: bold; line-height: 150%;">
+          Dig out all the precious informations with cards
+        </h1>
+        <span>
+          <p class="kr-font" style="font-size:2.5rem">카드로 소중한 정보를 찾아보고 저장해봐요</p>
+        </span>
       </div>
     </div>
 
+    <div class="row s3-2 justify-content-center text-center" style="height:100vh;">
 
-    <div class="row" data-aos="zoom-in">
-      <video autoplay muted loop width="100%">
-        <source src="images/s3/S3.mp4" type="video/mp4">
-      </video>
+      <div class="" id="s3-2" style="padding-top: 20vw;">
+        <h1 class="display-2 " style="font-size:3.44rem; font-weight: bold; line-height: 150%;">
+          Digging means to keep <br />searching and discovering something you like
+        </h1>
+        <span>
+          <p class="kr-font" style="font-size:1.81rem">디깅이란, 내가 흥미있는 분야의 유용한 정보를 얻기위해 이것저것 찾아보고 저장하는 모든 행위를 말해요</p>
+        </span>
+      </div>
     </div>
 
-    <div class="row justify-content-center s3" style="height: 300vh;">
-      <div class="text-center" style="margin-top:30%; ">
-        <div data-aos="zoom-in-up">
-          <h1>What do you dig?</h1> <br />
-          <span class="kr-font text-white">당신은 주로 무엇을 디깅하시나요?</span>
-        </div>
+
+
+
+    <div class="row justify-content-center bg-white s3-3" style="height: 300vh; ">
+      <div class="text-center text-dark" style="margin-top:30%; ">
+        <h1 style="font-size:3.44rem;">What do you dig?</h1> <br />
+        <span class="kr-font" style="font-size:1.81rem">당신은 주로 무엇을 디깅하시나요?</span>
       </div>
     </div>
 
@@ -539,149 +609,195 @@
         <source src="images/s11/s11.mp4" type="video/mp4">
       </video>
     </div>
-  </div>
 
 
-  <div class="row">
-    <section class="scroll-sequence__container s12-container">
-      <div class="scroll-sequence s12-sequence"></div>
-      <div class="scroll-sequence__content">
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-      </div>
 
-    </section>
-    <video autoplay muted loop width="100%">
-      <source src="images/s12/S12_main.mp4" type="video/mp4">
-    </video>
-    <video autoplay muted loop width="100%">
-      <source src="images/s12/S12_main2.mp4" type="video/mp4">
-    </video>
-    <video autoplay muted loop width="100%">
-      <source src="images/s12/S12_main3.mp4" type="video/mp4">
-    </video>
-    <video autoplay muted loop width="100%">
-      <source src="images/s12/S12_win.mp4" type="video/mp4">
-    </video>
-  </div>
 
-  <div class="row" class="s13_14">
-    <section class="scroll-sequence__container s13-container">
-      <div class="scroll-sequence s13-sequence"></div>
-      <div class="scroll-sequence__content">
-        <div class="speak">
-          <h1></h1>
-          <p></p>
+    <div class="row">
+      <section class="scroll-sequence__container s12-container">
+        <div class="scroll-sequence s12-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
         </div>
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-        <div class="speak">
-          <h1></h1>
-          <p></p>
-        </div>
-        <div class="speak">
-          <h1>Titles that <br/>            
-            show you the best</h1>
-          <p>당신을 가장 잘 보여주는 디깅 칭호들</p>
-        </div>
-        <div class="speak text-right mr-5">
-          <h1 class="display-3 font-weight-bold">Route you’ve searched <br />
-            represents you, too</h1>
+
+      </section>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_main.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_main2.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_main3.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop width="100%">
+        <source src="images/s12/S12_win.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="row" class="s13_14">
+      <section class="scroll-sequence__container s13-container">
+        <div class="scroll-sequence s13-sequence"></div>
+        <div class="scroll-sequence__content">
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1></h1>
+            <p></p>
+          </div>
+          <div class="speak">
+            <h1>Titles that <br />
+              show you the best</h1>
+            <p>당신을 가장 잘 보여주는 디깅 칭호들</p>
+          </div>
+          <div class="speak text-right mr-5">
+            <h1 class="display-3 font-weight-bold">Route you’ve searched <br />
+              represents you, too</h1>
             <p class="text-light" style="line-height: 6rem;">찾아본 디깅 루트도, 당신을 드러내는 방법이에요</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <div id="s15-back" class="" style="bottom: 6rem; margin: 0 -15px 0 -15px; ">
+      <div class="">
+        <div class="col-4 float-right text-right" style="top: 8rem;margin-right: 12rem;">
+          <h1 class="display-5 text-white">A lot of people’s information gathered together</h1>
+          <h3 class="text-white" style="opacity: 60%;">한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
+        </div>
+        <img src="images/s15/s15_card.png" width="100%">
+        <div class="col align-self-center text-center">
+          <h1 class="display-1 text-white" style="font-size: 16rem;font-weight: bolder;">DIGGING</h1>
+          <h1 class="text-white" style="font-weight: 300;opacity: 70%;">Start digging NOW!</h1>
         </div>
       </div>
-    </section>
+
+      <div class="row justify-content-between">
+        <div class="col">
+          <img src="images/s15/s15_name1.png" width="100%">
+        </div>
+        <div class="col">
+          <img src="images/s15/s15_name2.png" width="100%">
+        </div>
+        <div class="col">
+          <img src="images/s15/s15_name3.png" width="100%">
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <p class="col text-center text-white">
+          Thanks to
+        </p>
+      </div>
+
+      <div class="row justify-content-center col-12 py-5 text-white"
+        style="padding-bottom: 6rem;margin-left: 10%;opacity: 70%;">
+
+
+        <div class="col">
+          <p style="line-height: 3rem;">
+            Developer Jung Seung Won <br>
+            Aquarius Rhapsody<br>
+            Slyrose_bp<br>
+          </p>
+        </div>
+
+        <div class="col">
+          <p style="line-height: 3rem;">
+            Professor Yoon Jaeyoung <br>
+            RÉCORD <br>
+            Emoji island <br>
+          </p>
+        </div>
+
+        <div class="col">
+          <p style="line-height: 3rem;">
+
+            Hollys Coffee <br>
+            Black Pink Rose <br>
+            Monster drink <br>
+          </p>
+        </div>
+      </div>
+
+      <footer class="">
+        <a href="http://hivcdgw2020.com/themediumspace"><img src="images/footer_edited.png" width="100%"></a>
+
+      </footer>
+    </div>
+
+
   </div>
 
 
-  <div id="s15-back" class="" style="bottom: 6rem; margin: 0 -15px 0 -15px; ">
-    <div class="">
-      <div class="col-4 float-right text-right" style="top: 8rem;margin-right: 12rem;">
-        <h1 class="display-5 text-white">A lot of people’s information gathered together</h1>
-        <h3 class="text-white" style="opacity: 60%;">한사람, 한사람이 수집한 정보가 모여서 의미있는 다양한 콜렉션으로</h3>
-      </div>
-      <img src="images/s15/s15_card.png" width="100%">
-      <div class="col align-self-center text-center">
-        <h1 class="display-1 text-white" style="font-size: 16rem;font-weight: bolder;">DIGGING</h1>
-        <h1 class="text-white" style="font-weight: 300;opacity: 70%;">Start digging NOW!</h1>
-      </div>
-    </div>
-
-    <div class="row justify-content-between">
-      <div class="col">
-        <img src="images/s15/s15_name1.png" width="100%">
-      </div>
-      <div class="col">
-        <img src="images/s15/s15_name2.png" width="100%">
-      </div>
-      <div class="col">
-        <img src="images/s15/s15_name3.png" width="100%">
-      </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <p class="col text-center text-white">
-        Thanks to
-      </p>
-    </div>
-
-    <div class="row justify-content-center col-12 py-5 text-white"
-      style="padding-bottom: 6rem;margin-left: 10%;opacity: 70%;">
-
-
-      <div class="col">
-        <p style="line-height: 3rem;">
-          Developer Jung Seung Won <br>
-          Aquarius Rhapsody<br>
-          Slyrose_bp<br>
-        </p>
-      </div>
-
-      <div class="col">
-        <p style="line-height: 3rem;">
-          Professor Yoon Jaeyoung <br>
-          RÉCORD <br>
-          Emoji island <br>
-        </p>
-      </div>
-
-      <div class="col">
-        <p style="line-height: 3rem;">
-
-          Hollys Coffee <br>
-          Black Pink Rose <br>
-          Monster drink <br>
-        </p>
-      </div>
-    </div>
- 
-    <footer class="">
-     <a href = "http://hivcdgw2020.com/themediumspace"><img src = "images/footer.png" width = "100%"></a> 
-    
-    </footer>
-  </div>
   </div>
   </div>
   <script>
+
+$(window).scroll(function () {
+      var scroll = $(window).scrollTop() / 10;
+     console.log(scroll);
+      $("#s3-2").css({
+        "opacity": (240 - 0.9*scroll) + "%"
+      })
+      console.log("Opacity: " +( 170 - 0.01 * scroll))
+    
+    });
+
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close2")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+
+
     const appleSequenceImages = [];
     // const s2Images = [];
     const s7 = [];
@@ -711,6 +827,7 @@
       s12Images.push(`s12_intro_${`${i}`.slice(-6)}.png`);
     }
 
+   
 
     for (let i = 0; i <= 2361; i++) {
       s13Images.push(`s13,14_${`${i}`.slice(-10)}.png`);
@@ -1138,6 +1255,7 @@
           $(".s1_video").removeClass("d-none");
         }
       } else {
+        $(".s1_audio").addClass("d-none");
         $(".s1_image").removeClass("d-none");
         $(".s1_video").addClass("d-none");
         document.getElementById("s1_image").src = "images/s1/" + color + "/" + color + "_image.png";
@@ -1184,45 +1302,6 @@
 
 
 
-    $(window).scroll(function () {
-      var scroll = $(window).scrollTop() / 10;
-      // console.log(scroll);
-
-      $("#s1-digging-text").css({
-        "opacity": (-33 + 1 * scroll) + "%"
-      })
-
-
-      var rotationStr = "rotate(" + -0.8 * scroll + "deg)";
-      if (scroll <= 38) {
-        $(".d-card").css({
-          "-webkit-transform": rotationStr,
-          "-moz-transform": rotationStr,
-          "transform": rotationStr,
-          "opacity": rotationStr,
-          "width": (100 + 4 * scroll) + "%"
-        });
-        $("#s1_card_caption").css({
-          "opacity": 1 - 0.033 * scroll
-        });
-        $("#s1_text").css({
-          "padding-left": (62 + 5 * scroll) + "%"
-        });
-        $("#s1_title").css({
-          "margin-left": (0 - 8 * scroll) + "%"
-        });
-
-      } else if (scroll < 65) {
-        $("#s1_card_front").css({ "width": (100 + scroll) + "%" })
-      } else {
-        //안먹음
-        $(".d-card").css({
-          "width": (100 - 4 * scroll) + "%"
-        });
-
-      }
-
-    });
 
 
 
