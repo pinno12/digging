@@ -65,7 +65,7 @@
 
     /* Modal Content */
     .modal-content {
-
+      cursor:pointer;
       margin: 0;
       padding: 0;
       width: 100%;
@@ -363,7 +363,7 @@
 
 <body class="d-flex flex-column h-100 inner">
   <div class="container-fluid">
-    <div class="row" id="s1" style="background-color:#FF0080;; height:100vh" class="s1">
+    <div class="row" id="s1" style="background-color:#FF0080;; height:100vh" class="s1" >
       <div class="col-4" style=" margin-left: 3.95%;  margin-top: 4%; line-height: 6.875rem;">
         <p style="font-size:  1.25rem; opacity: 70%;">DIGGING Platform UXUI</p>
         <h1 class="text-white" id="s1_title" style='font-size: 6.125rem; opacity:70%;'>LET’S START DIGGING‍<span><img
@@ -393,7 +393,7 @@
       </div>
       <div class="col-5 offset-1" style="margin-top: 8%;">
         <div class="flip-card" style="cursor: pointer;">
-          <div class="flip-card-inner" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
             <div class="flip-card-front">
               <img loading="lazy" class="d-card" id="s1_card" src="images/s1/pink/pink_card_back.png" alt="digging card"
                 style="width:100%">
@@ -417,31 +417,29 @@
       </div>
 
 
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content close2">
-          <!-- <span class="close">&times;</span> -->
+     
+      <div class = "s1-image row" data-aos="fade-up">     
+        <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png"
+        style="width:100%;">         
+          <!-- <span class="close">&times;</span> -->          
+          <video autoplay width="100%" src="images/s1/pink/pink_video.mp4" id="s1_video"
+          class="s1_video"></video>          
           <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
-            style="top:15vw;  font-weight: 700; font-size:20.125rem;">DIGGING</h1>
-          <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png"
-            style="width:100%;">
-          <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
-              class="s1_video" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
-          <figure class="m-0 p-0" style="width:100%">
-            <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay"
-              loop="" style="width:100%;"></video>
-            <!-- <video src="images/s1/purple/purple_audio.mp4" id="s1_audio"
-            class="s1_audio d-none" autoplay="autoplay" loop="loop" style="width:100%;"></video>
-           -->
-
-          </figure>
-
-
-        </div>
-
-
+            style="top:15vw;  font-weight: 700; font-size:20.125rem;">DIGGING</h1>     
       </div>
+
+
+      <!-- <div data-aos="zoom-in-up" class="row">
+        <img loading="lazy" id="s1_image" class="s1_image d-none" src="images/s1/red/red_image.png" style="width:100%;">
+        <figure class="m-0 p-0" style="width:100%"><video muted src="images/s1/pink/pink_video.mp4" id="s1_video"
+            class="s1_video d-none" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
+            class="s1_video" autoplay="autoplay" loop="loop" style="width:100%;"></video></figure>
+        <video src="images/s1/purple/purple_audio.mp4" id="s1_audio" class="s1_audio d-none" autoplay="autoplay" loop=""
+          style="width:100%;"></video>
+  
+        <h1 class="display-1 text-uppercase text-white text-center overlay" id="s1-digging-text"
+          style="top:50%; opacity: 22%; font-weight: 700; font-size:13rem;">DIGGING</h1>
+      </div> -->
 
       <p id="s1_color" style="display:none;">
       </p>
@@ -479,16 +477,26 @@
         <span class="kr-font" style="font-size:1.81rem">당신은 주로 무엇을 디깅하시나요?</span>
       </div>
     </div>
+    <div class="row row-cols-2">
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+    </div>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="horizontal-scroll-wrapper" style=" background-color: white;">
         <img loading="lazy" src="images/s4/s4_1.png">
         <img loading="lazy" src="images/s4/s4_2.png">
         <img loading="lazy" src="images/s4/s4_3.png">
         <img loading="lazy" src="images/s4/s4_4.png">
-        <!-- <img loading="lazy" src="images/s4/s4_full.png"> -->
+        
       </div>
-    </div>
+    </div> -->
 
     <div class="row" data-aos="fade-in">
       <video autoplay muted loop width="100%">
@@ -760,27 +768,31 @@
 $(window).scroll(function () {
       var scroll = $(window).scrollTop() / 10;
      console.log(scroll);
+
       $("#s3-2").css({
         "opacity": (240 - 0.9*scroll) + "%"
+      })   
+    
+ 
+      $("#s1-digging-text").css({
+        "opacity": (-33 + 1 * scroll) + "%"
       })
-      console.log("Opacity: " +( 170 - 0.01 * scroll))
+
+      $("#s1").css("opacity", 1 - $(window).scrollTop() / $('#s1').height());
+
     
     });
+     
+    
 
 
-    // Get the modal
     var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close2")[0];
+    var vid = document.getElementById("s1_video"); 
 
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-      modal.style.display = "block";
-    }
+
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
@@ -832,7 +844,6 @@ $(window).scroll(function () {
     }
 
 
-    console.log(s13Images);
 
     const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
@@ -1239,26 +1250,19 @@ $(window).scroll(function () {
       document.getElementById("s1_card_front").src = "images/s1/" + color + "/" + color + "_card_front.png";
       document.getElementById("s1_card_caption").src = "images/s1/" + color + "/" + color + "_caption.png";
       document.getElementById("s1_color").textContent = color;
-
-
       document.getElementById("s1").style.backgroundColor = document.getElementById(color).style.backgroundColor;
+
       if (color == "mint" || color == "pink" || color == "sky" || color == "purple") {
-        $(".s1_image").addClass("d-none");
-        if (color == "purple") {
-          $(".s1_audio").removeClass("d-none");
-          $(".s1_video").addClass("d-none");
+
+        $(".s1_image").addClass("d-none");   
+        document.getElementById("s1_video").src = "images/s1/" + color + "/" + color + "_video.mp4";
+        $(".s1_video").removeClass("d-none");
         } else {
-          document.getElementById("s1_video").src = "images/s1/" + color + "/" + color + "_video.mp4";
-          $(".s1_audio").addClass("d-none");
-          $(".s1_video").removeClass("d-none");
-        }
-      } else {
-        $(".s1_audio").addClass("d-none");
         $(".s1_image").removeClass("d-none");
+        vid.pause();
         $(".s1_video").addClass("d-none");
         document.getElementById("s1_image").src = "images/s1/" + color + "/" + color + "_image.png";
-      }
-
+        }
       switch (color) {
         case 'red':
           document.getElementById("s1_text").textContent = "STYLE/BEAUTY";
@@ -1297,6 +1301,25 @@ $(window).scroll(function () {
           break;
       }
     }
+
+    
+    document.getElementById("s1").style.backgroundColor = document.getElementById(color).style.backgroundColor;
+      if (color == "mint" || color == "pink" || color == "sky" || color == "purple") {
+        $(".s1_image").addClass("d-none");
+        if (color == "purple") {
+          $(".s1_audio").removeClass("d-none");
+          $(".s1_video").addClass("d-none");
+        } else {
+          document.getElementById("s1_video").src = "images/s1/" + color + "/" + color + "_video.mp4";
+          $(".s1_audio").addClass("d-none");
+          $(".s1_video").removeClass("d-none");
+        }
+      } else {
+        $(".s1_audio").addClass("d-none");
+        $(".s1_image").removeClass("d-none");
+        $(".s1_video").addClass("d-none");
+        document.getElementById("s1_image").src = "images/s1/" + color + "/" + color + "_image.png";
+      }
 
 
 
